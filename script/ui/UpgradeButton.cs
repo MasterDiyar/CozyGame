@@ -18,24 +18,34 @@ public partial class UpgradeButton : Button
 	{
 		_player = GetTree().GetFirstNodeInGroup("Player") as Player;
 		Pressed += OnClick;
+		MouseEntered += Tesc;
 		
-		Disabled = IsOpen;
+		Disabled = !IsOpen;
 		
+		if (button == null) return;
+		CheckRequirements();
+		SetLine();
+	}
+
+	void SetLine()
+	{
+		Vector2 startPos = Size / 2;
+        Vector2 endPos = (button.Position + button.Size / 2) - Position;
+        line.Points = [startPos, endPos];
+        line.ShowBehindParent = true;
+	}
+
+	void Tesc()
+	{
+		CheckRequirements();
 	}
 	
 	bool CheckRequirements()
 	{
-		if (button.IsOpen)
-		{
-			Show();
-			
-			
-			
-			
-			
-		}
-
-		return false;
+		if (button is { IsOpen: false }) return false;
+		Show();
+		Disabled = cost.CanAfford(_player.CurrentResources);
+		return Disabled;
 	}
 	
 	void OnClick()

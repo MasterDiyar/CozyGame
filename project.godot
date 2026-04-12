@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="Testcase"
+run/main_scene="uid://d1nqqd4yxsfbc"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [dotnet]
 

@@ -1,16 +1,24 @@
 [gd_scene format=3 uid="uid://ck76o6ec3by4f"]
 
-[ext_resource type="Script" uid="uid://cnqgudugbsd1g" path="res://script/prefab/Unit.cs" id="1_6smn3"]
+[ext_resource type="Script" uid="uid://dvu1wfvc1cncy" path="res://script/player/Player.cs" id="1_ajqqa"]
 [ext_resource type="PackedScene" uid="uid://o2puoxgyky5" path="res://scene/player/movement.tscn" id="1_v7pse"]
 [ext_resource type="PackedScene" uid="uid://crriydnxce732" path="res://scene/player/stickman.tscn" id="2_cm2cf"]
+[ext_resource type="Script" uid="uid://bkwnipwcpt4im" path="res://script/effects/CostResource.cs" id="2_rkmeh"]
 [ext_resource type="PackedScene" uid="uid://b3ni8atb2eqll" path="res://scene/player/dash.tscn" id="4_5lop3"]
 [ext_resource type="Script" uid="uid://c0csvyewogpkt" path="res://script/player/PlayerCam.cs" id="5_ajqqa"]
+
+[sub_resource type="Resource" id="Resource_732fb"]
+script = ExtResource("2_rkmeh")
+Strength = 1.0
+Density = 1.0
+Versatility = 1.0
+metadata/_custom_type_script = "uid://bkwnipwcpt4im"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gh87g"]
 
 [node name="Player" type="CharacterBody2D" unique_id=1560160023]
-script = ExtResource("1_6smn3")
-MaxSpeed = 80.0
+script = ExtResource("1_ajqqa")
+CurrentResources = SubResource("Resource_732fb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=478166182]
 shape = SubResource("RectangleShape2D_gh87g")

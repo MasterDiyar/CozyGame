@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://d1nqqd4yxsfbc"]
+
+[ext_resource type="PackedScene" uid="uid://tggf83hxuru" path="res://scene/maps/test_map.tscn" id="1_dbls1"]
+[ext_resource type="PackedScene" uid="uid://c20i60a4n7lis" path="res://scene/ui/upgrade_tree.tscn" id="2_33cqm"]
+
+[node name="game" type="Node2D" unique_id=224367190]
+
+[node name="Pausable" type="Node2D" parent="." unique_id=1651027100]
+
+[node name="map" parent="Pausable" unique_id=1666587264 instance=ExtResource("1_dbls1")]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1428296586]
+
+[node name="UpgradeTree" parent="UI" unique_id=1870492363 instance=ExtResource("2_33cqm")]
