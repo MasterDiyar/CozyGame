@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bk4g6iaqhwhv2"]
+
+[ext_resource type="Script" uid="uid://byc1jt6iny1yi" path="res://script/ui/UpgradeButton.cs" id="1_afmkw"]
+
+[node name="UpgradeButton" type="Button" unique_id=2066506352]
+offset_right = 36.0
+offset_bottom = 25.0
+script = ExtResource("1_afmkw")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1234210456]

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b3ni8atb2eqll"]
+
+[ext_resource type="Script" uid="uid://cdg2y5raxt4vy" path="res://script/player/Dash.cs" id="1_cxddx"]
+
+[node name="dash" type="Node2D" unique_id=760711624 node_paths=PackedStringArray("_dashTimer", "_ghostTimer")]
+script = ExtResource("1_cxddx")
+_dashTimer = NodePath("dash")
+_ghostTimer = NodePath("ghost")
+
+[node name="dash" type="Timer" parent="." unique_id=40547832]
+
+[node name="ghost" type="Timer" parent="." unique_id=625182055]
