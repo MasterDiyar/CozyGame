@@ -5,27 +5,32 @@ using Testcase.script.player;
 
 public partial class UpgradeButton : Button
 {
-	[Export] public bool IsOpen = false;
+	[Export] public bool IsOpen = false, IsBuyed = false;
 	[Export] public UpgradeButton button;
 	[Export] CostResource cost;
 	[Export] Effect effect;
 	[Export] private Line2D line;
+
+	public Action parentBuyed;
 		
 
 	private Player _player;
 
 	public override void _Ready()
 	{
-		_player = GetTree().GetFirstNodeInGroup("Player") as Player;
+		_player = GetTree().GetFirstNodeInGroup("player") as Player;
 		Pressed += OnClick;
 		MouseEntered += Tesc;
 		
 		Disabled = !IsOpen;
 		
 		if (button == null) return;
+		button.parentBuyed += Tesc;
+		Visible = button.IsOpen;
 		CheckRequirements();
 		SetLine();
 	}
+	
 
 	void SetLine()
 	{
@@ -44,16 +49,18 @@ public partial class UpgradeButton : Button
 	{
 		if (button is { IsOpen: false }) return false;
 		Show();
-		Disabled = cost.CanAfford(_player.CurrentResources);
-		return Disabled;
+		Disabled = !cost.CanAfford(_player.CurrentResources);
+		return !Disabled;
 	}
 	
 	void OnClick()
 	{
 		if (cost.CanAfford(_player.CurrentResources)) {
 			cost.Spend(_player.CurrentResources); 
-			effect.Apply(_player);               
+			//effect.Apply(_player);               
 			IsOpen = true;
+			IsBuyed = true;
+			parentBuyed?.Invoke();
 		}
 	}
 }

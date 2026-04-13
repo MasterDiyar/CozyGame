@@ -22,6 +22,32 @@ Density = 3.0
 Versatility = 1.0
 metadata/_custom_type_script = "uid://bkwnipwcpt4im"
 
+[sub_resource type="Resource" id="Resource_yo2m8"]
+script = ExtResource("2_fw4t3")
+Strength = 3.0
+Density = 2.0
+Versatility = 1.0
+Bronze = 5.0
+metadata/_custom_type_script = "uid://bkwnipwcpt4im"
+
+[sub_resource type="Resource" id="Resource_hthm1"]
+script = ExtResource("2_fw4t3")
+Strength = 10.0
+Density = 12.0
+Versatility = 8.0
+Silicon = 15.0
+Iron = 10.0
+Gold = 5.0
+metadata/_custom_type_script = "uid://bkwnipwcpt4im"
+
+[sub_resource type="Resource" id="Resource_4d0lc"]
+script = ExtResource("2_fw4t3")
+Strength = 4.0
+Density = 3.0
+Versatility = 5.0
+Iron = 5.0
+metadata/_custom_type_script = "uid://bkwnipwcpt4im"
+
 [node name="UpgradeTree" type="Control" unique_id=1870492363]
 layout_mode = 3
 anchors_preset = 15
@@ -78,11 +104,32 @@ text = "Bodyfication
 button = NodePath("../Legification")
 cost = SubResource("Resource_fw4t3")
 
-[node name="UpgradeButton4" parent="ButtonList" unique_id=1339509591 instance=ExtResource("1_2gcxj")]
+[node name="Handufufcattion" parent="ButtonList" unique_id=1339509591 node_paths=PackedStringArray("button") instance=ExtResource("1_2gcxj")]
 layout_mode = 0
+offset_left = 344.0
+offset_top = 141.0
+offset_right = 463.0
+offset_bottom = 172.0
+text = "Handificattion"
+button = NodePath("../Legification")
+cost = SubResource("Resource_yo2m8")
 
-[node name="UpgradeButton5" parent="ButtonList" unique_id=1556322895 instance=ExtResource("1_2gcxj")]
+[node name="Realization" parent="ButtonList" unique_id=1556322895 node_paths=PackedStringArray("button") instance=ExtResource("1_2gcxj")]
 layout_mode = 0
+offset_left = 496.0
+offset_top = 201.0
+offset_right = 532.0
+offset_bottom = 226.0
+text = "Realization"
+button = NodePath("../Bodyfication")
+cost = SubResource("Resource_hthm1")
 
-[node name="UpgradeButton6" parent="ButtonList" unique_id=420311995 instance=ExtResource("1_2gcxj")]
+[node name="FillHeaded" parent="ButtonList" unique_id=420311995 node_paths=PackedStringArray("button") instance=ExtResource("1_2gcxj")]
 layout_mode = 0
+offset_left = 345.0
+offset_top = 85.0
+offset_right = 381.0
+offset_bottom = 110.0
+text = "FillHeaded"
+button = NodePath("../Legification")
+cost = SubResource("Resource_4d0lc")

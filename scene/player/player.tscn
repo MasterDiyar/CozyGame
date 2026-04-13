@@ -9,14 +9,14 @@
 
 [sub_resource type="Resource" id="Resource_732fb"]
 script = ExtResource("2_rkmeh")
-Strength = 1.0
-Density = 1.0
-Versatility = 1.0
+Strength = 100.0
+Density = 100.0
+Versatility = 100.0
 metadata/_custom_type_script = "uid://bkwnipwcpt4im"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gh87g"]
 
-[node name="Player" type="CharacterBody2D" unique_id=1560160023]
+[node name="Player" type="CharacterBody2D" unique_id=1560160023 groups=["player"]]
 script = ExtResource("1_ajqqa")
 CurrentResources = SubResource("Resource_732fb")
 
