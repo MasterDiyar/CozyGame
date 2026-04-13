@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ck76o6ec3by4f" path="res://scene/player/player.tscn" id="1_1lauk"]
 [ext_resource type="Texture2D" uid="uid://c4dr7b66gbyln" path="res://icon.svg" id="2_cny17"]
+[ext_resource type="PackedScene" uid="uid://c2glwv43pm647" path="res://scene/enviroment/altar.tscn" id="3_cny17"]
 
 [node name="map" type="Node2D" unique_id=1666587264]
 
@@ -10,3 +11,6 @@
 [node name="Icon" type="Sprite2D" parent="." unique_id=1054262796]
 position = Vector2(184, 85)
 texture = ExtResource("2_cny17")
+
+[node name="Altar" parent="." unique_id=498256027 instance=ExtResource("3_cny17")]
+position = Vector2(3, -305)

@@ -22,6 +22,8 @@ public partial class Dash : Node2D
 	private Vector2 _lastDirection = Vector2.Right;
 	private CharacterBody2D _target;
 	
+	[Export] public bool TurnOn = false;
+	
 	
 	public bool IsDashing => _isDashing;
 
@@ -37,6 +39,7 @@ public partial class Dash : Node2D
 
 	public void StartDash(CharacterBody2D target, Vector2 direction)
 	{
+		if (!TurnOn) return;
 		_target = target;
 		if (_isDashing || direction == Vector2.Zero) return;
 

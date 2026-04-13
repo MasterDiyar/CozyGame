@@ -15,6 +15,7 @@ Versatility = 100.0
 metadata/_custom_type_script = "uid://bkwnipwcpt4im"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gh87g"]
+size = Vector2(20, 30)
 
 [node name="Player" type="CharacterBody2D" unique_id=1560160023 groups=["player"]]
 script = ExtResource("1_ajqqa")
@@ -26,8 +27,6 @@ shape = SubResource("RectangleShape2D_gh87g")
 [node name="movement" parent="." unique_id=2081606091 node_paths=PackedStringArray("_player", "_dash") instance=ExtResource("1_v7pse")]
 _player = NodePath("..")
 _dash = NodePath("../dash")
-
-[node name="BodyNode" parent="." unique_id=274374573 instance=ExtResource("2_cm2cf")]
 
 [node name="dash" parent="." unique_id=760711624 node_paths=PackedStringArray("_playerBody", "_playerCam") instance=ExtResource("4_5lop3")]
 DashSpeed = 400.0
@@ -42,3 +41,5 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 editor_draw_drag_margin = true
 script = ExtResource("5_ajqqa")
+
+[node name="BodyNode" parent="." unique_id=274374573 instance=ExtResource("2_cm2cf")]

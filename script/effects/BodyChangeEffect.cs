@@ -1,9 +1,8 @@
 using Godot;
 using Testcase.script.player;
 
-namespace Testcase.script.effects;
 
-public partial class BodyChangeEffect : Effect
+[GlobalClass] public partial class BodyChangeEffect : Effect
 {
     [Export] private BodyStructure.BodyPart part;
     [Export] private Texture2D texture;

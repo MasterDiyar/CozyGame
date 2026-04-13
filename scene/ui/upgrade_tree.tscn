@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://c20i60a4n7lis"]
 
 [ext_resource type="PackedScene" uid="uid://bk4g6iaqhwhv2" path="res://scene/prefab/upgrade_button.tscn" id="1_2gcxj"]
+[ext_resource type="Script" uid="uid://d723irpkivv6" path="res://script/ui/UpgradeTree.cs" id="1_fw4t3"]
 [ext_resource type="Script" uid="uid://bkwnipwcpt4im" path="res://script/effects/CostResource.cs" id="2_fw4t3"]
+[ext_resource type="Script" uid="uid://dp2vhiw1mmsor" path="res://script/effects/StateChangeEffect.cs" id="4_rlxuj"]
+[ext_resource type="Script" uid="uid://vckdh8ex1d7i" path="res://script/effects/BodyChangeEffect.cs" id="5_hthm1"]
+[ext_resource type="Texture2D" uid="uid://8pts0mthmm77" path="res://asset/units/grademan.png" id="6_4d0lc"]
 
 [sub_resource type="Resource" id="Resource_rlxuj"]
 script = ExtResource("2_fw4t3")
@@ -9,11 +13,21 @@ Strength = 1.0
 Density = 1.0
 Versatility = 1.0
 
+[sub_resource type="Resource" id="Resource_c34fn"]
+script = ExtResource("4_rlxuj")
+metadata/_custom_type_script = "uid://dp2vhiw1mmsor"
+
 [sub_resource type="Resource" id="Resource_2gcxj"]
 script = ExtResource("2_fw4t3")
 Strength = 2.0
 Density = 1.0
 Versatility = 1.0
+
+[sub_resource type="Resource" id="Resource_8vn3p"]
+script = ExtResource("5_hthm1")
+part = 2
+texture = ExtResource("6_4d0lc")
+metadata/_custom_type_script = "uid://vckdh8ex1d7i"
 
 [sub_resource type="Resource" id="Resource_fw4t3"]
 script = ExtResource("2_fw4t3")
@@ -55,6 +69,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fw4t3")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=995793170]
 layout_mode = 1
@@ -82,6 +97,7 @@ offset_bottom = 286.21127
 text = "Add Dash"
 IsOpen = true
 cost = SubResource("Resource_rlxuj")
+effect = SubResource("Resource_c34fn")
 
 [node name="Legification" parent="ButtonList" unique_id=2108962036 node_paths=PackedStringArray("button") instance=ExtResource("1_2gcxj")]
 layout_mode = 0
@@ -92,6 +108,7 @@ offset_bottom = 223.0
 text = "Legification"
 button = NodePath("../Dash")
 cost = SubResource("Resource_2gcxj")
+effect = SubResource("Resource_8vn3p")
 
 [node name="Bodyfication" parent="ButtonList" unique_id=1302687303 node_paths=PackedStringArray("button") instance=ExtResource("1_2gcxj")]
 layout_mode = 0

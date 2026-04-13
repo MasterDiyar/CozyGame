@@ -57,7 +57,7 @@ public partial class UpgradeButton : Button
 	{
 		if (cost.CanAfford(_player.CurrentResources)) {
 			cost.Spend(_player.CurrentResources); 
-			//effect.Apply(_player);               
+			effect.Apply(_player);               
 			IsOpen = true;
 			IsBuyed = true;
 			parentBuyed?.Invoke();
