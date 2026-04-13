@@ -24,9 +24,10 @@ CurrentResources = SubResource("Resource_732fb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=478166182]
 shape = SubResource("RectangleShape2D_gh87g")
 
-[node name="movement" parent="." unique_id=2081606091 node_paths=PackedStringArray("_player", "_dash") instance=ExtResource("1_v7pse")]
+[node name="movement" parent="." unique_id=2081606091 node_paths=PackedStringArray("_player", "_dash", "_visual") instance=ExtResource("1_v7pse")]
 _player = NodePath("..")
 _dash = NodePath("../dash")
+_visual = NodePath("../BodyNode")
 
 [node name="dash" parent="." unique_id=760711624 node_paths=PackedStringArray("_playerBody", "_playerCam") instance=ExtResource("4_5lop3")]
 DashSpeed = 400.0

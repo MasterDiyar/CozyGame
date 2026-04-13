@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c2glwv43pm647"]
+
+[ext_resource type="Script" uid="uid://c4sihqge6sres" path="res://script/prefab/Altar.cs" id="1_6xf7s"]
+[ext_resource type="Script" uid="uid://dp2vhiw1mmsor" path="res://script/effects/StateChangeEffect.cs" id="2_c61hk"]
+
+[sub_resource type="Resource" id="Resource_jvsas"]
+script = ExtResource("2_c61hk")
+Character = 2
+metadata/_custom_type_script = "uid://dp2vhiw1mmsor"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c61hk"]
+radius = 41.0
+
+[node name="Altar" type="Area2D" unique_id=498256027]
+script = ExtResource("1_6xf7s")
+effect = SubResource("Resource_jvsas")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1229693331]
+shape = SubResource("CircleShape2D_c61hk")
+
+[node name="Button" type="Button" parent="." unique_id=441815706]
+offset_left = -21.0
+offset_top = 15.0
+offset_right = 22.0
+offset_bottom = 46.0
+text = "Pray"
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1956610804]
+position = Vector2(0, 2)
+polygon = PackedVector2Array(-27, 8, 32, 9, 31, -23, 12, -26, 12, -52, 30, -57, 25, -79, 9, -75, 20, -96, 2, -79, 0, -99, -4, -77, -20, -97, -13, -78, -28, -78, -32, -56, -13, -52, -13, -25, -32, -21)

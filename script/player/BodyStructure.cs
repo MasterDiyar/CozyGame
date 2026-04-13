@@ -4,6 +4,7 @@ using System;
 public partial class BodyStructure : Node2D
 {
     [Export] Sprite2D _body, _head, _leftArm, _rightArm, _leftLeg, _rightLeg;
+    [Export] public AnimationPlayer Anim;
     public enum Telo
     {
         Stick,
@@ -22,7 +23,7 @@ public partial class BodyStructure : Node2D
         RightArm,
     }
 
-    [Export] public Telo MyBody;
+    [Export] public Telo MyBody = Telo.Stick;
 
     public Action BodyChanged;
     public Action TextureChanged;
@@ -38,5 +39,25 @@ public partial class BodyStructure : Node2D
             case BodyPart.RightLeg: _rightLeg.Texture = texture; break;
         }
         TextureChanged?.Invoke();
+    }
+
+    public void PlayAnimation()
+    {
+        switch (MyBody)
+        {
+            case Telo.Stick:
+                Anim.Play("StickMove");
+                break;
+        }
+    }
+
+    public void PlayIdleAnimation()
+    {
+        switch (MyBody)
+        {
+            case Telo.Stick:
+                Anim.Play("StickIdle1");
+                break;
+        }
     }
 }
