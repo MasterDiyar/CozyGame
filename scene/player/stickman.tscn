@@ -1,8 +1,16 @@
 [gd_scene format=3 uid="uid://crriydnxce732"]
 
+[ext_resource type="Script" uid="uid://82teyx8qq4u5" path="res://script/player/BodyStructure.cs" id="1_1lc7m"]
 [ext_resource type="Texture2D" uid="uid://df2tqja5yuqi" path="res://asset/units/stickman.png" id="1_wd3y0"]
 
-[node name="Node2D" type="Node2D" unique_id=274374573]
+[node name="BodyNode" type="Node2D" unique_id=274374573 node_paths=PackedStringArray("_body", "_head", "_leftArm", "_rightArm", "_leftLeg", "_rightLeg")]
+script = ExtResource("1_1lc7m")
+_body = NodePath("Body")
+_head = NodePath("Body/Head")
+_leftArm = NodePath("Body/lHand")
+_rightArm = NodePath("Body/rHand")
+_leftLeg = NodePath("Body/lLeg")
+_rightLeg = NodePath("Body/rLeg")
 
 [node name="Body" type="Sprite2D" parent="." unique_id=25845809]
 texture_filter = 3

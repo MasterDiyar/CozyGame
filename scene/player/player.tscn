@@ -27,13 +27,13 @@ shape = SubResource("RectangleShape2D_gh87g")
 _player = NodePath("..")
 _dash = NodePath("../dash")
 
-[node name="Node2D" parent="." unique_id=274374573 instance=ExtResource("2_cm2cf")]
+[node name="BodyNode" parent="." unique_id=274374573 instance=ExtResource("2_cm2cf")]
 
 [node name="dash" parent="." unique_id=760711624 node_paths=PackedStringArray("_playerBody", "_playerCam") instance=ExtResource("4_5lop3")]
 DashSpeed = 400.0
 GhostInterval = 0.04
 GhostFadeTime = 0.4
-_playerBody = NodePath("../Node2D")
+_playerBody = NodePath("../BodyNode")
 _playerCam = NodePath("../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1993826136]

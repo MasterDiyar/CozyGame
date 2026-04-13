@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://d1nqqd4yxsfbc"]
 
+[ext_resource type="Script" uid="uid://cmigoxtqilika" path="res://script/game/Game.cs" id="1_33cqm"]
 [ext_resource type="PackedScene" uid="uid://tggf83hxuru" path="res://scene/maps/test_map.tscn" id="1_dbls1"]
 [ext_resource type="PackedScene" uid="uid://c20i60a4n7lis" path="res://scene/ui/upgrade_tree.tscn" id="2_33cqm"]
 
 [node name="game" type="Node2D" unique_id=224367190]
+script = ExtResource("1_33cqm")
 
 [node name="Pausable" type="Node2D" parent="." unique_id=1651027100]
 
