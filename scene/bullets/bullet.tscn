@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://opj228rlw633"]
+
+[ext_resource type="Script" uid="uid://d1jllkhmmkp1i" path="res://script/bullet/Bullet.cs" id="1_fg63w"]
+[ext_resource type="Texture2D" uid="uid://b2bsoba6dcmgi" path="res://asset/units/Guns.png" id="2_kwj4l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3r8e"]
+
+[node name="Bullet" type="Area2D" unique_id=474972768]
+script = ExtResource("1_fg63w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1803438079]
+shape = SubResource("RectangleShape2D_a3r8e")
+
+[node name="Texture" type="Sprite2D" parent="." unique_id=1441168888]
+texture_filter = 3
+texture = ExtResource("2_kwj4l")
+region_enabled = true
+region_rect = Rect2(32, 0, 8, 3)

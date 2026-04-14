@@ -13,4 +13,11 @@ public partial class Unit : CharacterBody2D
 		Hp = MaxHp;
 		Patrons = MaxPatrons;
 	}
+
+	public void TakeDamage(float damage)
+	{
+		Hp -= damage;
+		
+		if (Hp < 0) QueueFree();
+	}
 }
