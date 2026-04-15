@@ -4,12 +4,16 @@ using Godot;
 {
     [Export] public PackedScene BulletScene;
     [Export] public int Count = 1;
-    [Export] public float AngleOffset = 0;
-    [Export] public float AngleStarter = 0;
+    [Export] public float AngleOffset;
+    [Export] public float AngleStarter;
 
-    [Export] public float SpawnOffset = 0;
+    [Export] public float SpawnOffset;
     [Export] public float AttackTime = 1;
     
     [Export] public BulletResource BulletResource;
     [Export] public PackedScene ParticleScene;
+
+    [ExportGroup("forItemContainer")] [Export]
+    public Texture2D WeaponIcon;
+    [Export]public Rect2 IconRect;
 }

@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://scy1jtc3bjd0"]
 
+[ext_resource type="Script" uid="uid://cfkgr7b8oi31k" path="res://script/weapon/ItemContainer.cs" id="1_kwpr7"]
+[ext_resource type="AudioStream" uid="uid://b86fiw15tjv5g" path="res://asset/sound/pickup.mp3" id="2_n6dwi"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_pbol8"]
 
 [node name="ItemContainer" type="Area2D" unique_id=1367988381]
+script = ExtResource("1_kwpr7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=13676455]
 shape = SubResource("CircleShape2D_pbol8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=252020135]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=599509547]
+stream = ExtResource("2_n6dwi")
