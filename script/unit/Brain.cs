@@ -10,12 +10,21 @@ public partial class Brain : Node2D
 		Prepare,
 		Shoot
 	}
+	Timer timer = new Timer();
 
 	[Export] private Node2D texture;
-	[Export] private Node2D[] weapons;
+	[Export] private Attack[] weapons;
 	public override void _Ready()
 	{
+		AddChild(timer);
+		timer.Timeout += Search;
 		//TODO in process
+	}
+
+	void Search()
+	{
+		//TODO in progress
+		//create choosing between states
 	}
 
 	public override void _Process(double delta)

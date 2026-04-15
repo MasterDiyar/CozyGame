@@ -7,9 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://b3ni8atb2eqll" path="res://scene/player/dash.tscn" id="4_5lop3"]
 [ext_resource type="Script" uid="uid://c0csvyewogpkt" path="res://script/player/PlayerCam.cs" id="5_ajqqa"]
 [ext_resource type="PackedScene" uid="uid://yrlu32djuo4d" path="res://scene/player/Attack.tscn" id="7_732fb"]
-[ext_resource type="PackedScene" uid="uid://opj228rlw633" path="res://scene/bullets/bullet.tscn" id="8_hfhxk"]
-[ext_resource type="Texture2D" uid="uid://b2bsoba6dcmgi" path="res://asset/units/Guns.png" id="9_oypl4"]
-[ext_resource type="Script" uid="uid://cxxhqxh8q1t64" path="res://script/bullet/BulletResource.cs" id="10_qjg4s"]
 
 [sub_resource type="Resource" id="Resource_732fb"]
 script = ExtResource("2_rkmeh")
@@ -20,17 +17,6 @@ metadata/_custom_type_script = "uid://bkwnipwcpt4im"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gh87g"]
 size = Vector2(20, 30)
-
-[sub_resource type="Resource" id="Resource_1wtbu"]
-script = ExtResource("10_qjg4s")
-Texture = ExtResource("9_oypl4")
-TextureRect = Rect2(32, 0, 8, 3)
-Speed = 200.0
-Acceleration = 10.0
-LifeTime = 3.0
-Damage = 20.0
-Extras = null
-metadata/_custom_type_script = "uid://cxxhqxh8q1t64"
 
 [node name="Player" type="CharacterBody2D" unique_id=1560160023 node_paths=PackedStringArray("Attack") groups=["player"]]
 script = ExtResource("1_ajqqa")
@@ -62,8 +48,3 @@ script = ExtResource("5_ajqqa")
 [node name="BodyNode" parent="." unique_id=274374573 instance=ExtResource("2_cm2cf")]
 
 [node name="attack" parent="." unique_id=1839049909 instance=ExtResource("7_732fb")]
-Bullet = ExtResource("8_hfhxk")
-BulletResource = SubResource("Resource_1wtbu")
-count = 3
-AngleOffset = 0.15
-SpawnOffset = 15.0
