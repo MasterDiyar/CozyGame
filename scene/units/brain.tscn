@@ -2,5 +2,6 @@
 
 [ext_resource type="Script" uid="uid://ba2381vnkh0n4" path="res://script/unit/Brain.cs" id="1_ruefk"]
 
-[node name="Brain" type="Node2D" unique_id=1724275448]
+[node name="Brain" type="Node2D" unique_id=1724275448 node_paths=PackedStringArray("weapons")]
 script = ExtResource("1_ruefk")
+weapons = []

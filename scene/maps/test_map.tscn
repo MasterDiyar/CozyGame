@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ck76o6ec3by4f" path="res://scene/player/player.tscn" id="1_1lauk"]
 [ext_resource type="Texture2D" uid="uid://c4dr7b66gbyln" path="res://icon.svg" id="2_cny17"]
 [ext_resource type="PackedScene" uid="uid://c2glwv43pm647" path="res://scene/enviroment/altar.tscn" id="3_cny17"]
+[ext_resource type="PackedScene" uid="uid://cbitunrmeeed4" path="res://scene/units/MusketerUnit.tscn" id="4_3x1ky"]
 
 [node name="map" type="Node2D" unique_id=1666587264]
 
@@ -14,3 +15,6 @@ texture = ExtResource("2_cny17")
 
 [node name="Altar" parent="." unique_id=498256027 instance=ExtResource("3_cny17")]
 position = Vector2(3, -305)
+
+[node name="Unit" parent="." unique_id=902821926 instance=ExtResource("4_3x1ky")]
+position = Vector2(199, -51)

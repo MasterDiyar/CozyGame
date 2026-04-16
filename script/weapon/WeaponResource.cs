@@ -9,6 +9,7 @@ using Godot;
 
     [Export] public float SpawnOffset;
     [Export] public float AttackTime = 1;
+    [Export] public float AngleRandomness = 0.01f;
     
     [Export] public BulletResource BulletResource;
     [Export] public PackedScene ParticleScene;

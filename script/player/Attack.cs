@@ -7,7 +7,7 @@ public partial class Attack : Node2D
 	 PackedScene Bullet, particle;
 	BulletResource BulletResource;
 	 private int count;
-	 private float AngleOffset, SpawnOffset, StartAngle;
+	 private float AngleOffset, SpawnOffset, StartAngle, randomness;
 
 	private float attackTime = 2;
 	CpuParticles2D particles;
@@ -30,7 +30,8 @@ public partial class Attack : Node2D
 		attackTime = WeaponRes.AttackTime;
 		particle = WeaponRes.ParticleScene;
 		SpawnOffset = WeaponRes.SpawnOffset;
-
+		randomness = WeaponRes.AngleRandomness;
+		
 		particles?.QueueFree();
 		
 		particles = particle.Instantiate<CpuParticles2D>();
@@ -50,9 +51,11 @@ public partial class Attack : Node2D
 		if (_timer < attackTime) return;
 		_timer = 0;
 		var totalAngle = angle + StartAngle;
-		for (int i = 0; i < count; i++) {
+		for (int i = 0; i < count; i++)
+		{
+			var arrand = (GD.Randf() - 0.5f) * randomness;
 			var bullet = Bullet.Instantiate<Bullet>();
-			bullet.Rotation = totalAngle  + AngleOffset * i;
+			bullet.Rotation = totalAngle  + AngleOffset * i + arrand;
 			bullet.bulletResource = BulletResource;
 			bullet.dontTouchUnit = executer;
 			bullet.GlobalPosition = GlobalPosition + Vector2.FromAngle(totalAngle + AngleOffset * i) * SpawnOffset;

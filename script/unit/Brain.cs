@@ -85,19 +85,20 @@ public partial class Brain : Node2D
 				foreach (var wep in weapons)
 					wep.ExecuteAttack(angle, _unit);
 				_currentState = State.Idle;
-				break;
+				return;
 			case State.Prepare:
 				_animationPlayer.Play("Prepare");
 				beforeShoot += dt;
-				if (beforeShoot > _animationPlayer.CurrentAnimationLength)
-				{
-					timer.Start();
-					_currentState = State.Shoot;
-					beforeShoot = 0;
-				}
+				if (!(beforeShoot > _animationPlayer.CurrentAnimationLength)) return;
+				timer.Start();
+				_currentState = State.Shoot;
+				beforeShoot = 0;
 				return;
 			case State.March:
-				//arent done
+				_unit.Velocity = Vector2.FromAngle(_pathways.GetAngleToTarget(_unit.GlobalPosition)) * _unit.MaxSpeed;
+				if ((_unit.Position -  _pathways.GetTargetPosition()).Length() < 5f)
+					_pathways.AddIndex();
+				_animationPlayer.Play("Move");
 				return;
 				
 		}

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://di50obk6upual"]
+
+[ext_resource type="PackedScene" uid="uid://opj228rlw633" path="res://scene/bullets/bullet.tscn" id="1_chh88"]
+[ext_resource type="Texture2D" uid="uid://b2bsoba6dcmgi" path="res://asset/units/Guns.png" id="1_cl13s"]
+[ext_resource type="Script" uid="uid://63ykb1bpx0u7" path="res://script/weapon/WeaponResource.cs" id="1_l2hh5"]
+[ext_resource type="Script" uid="uid://cxxhqxh8q1t64" path="res://script/bullet/BulletResource.cs" id="2_b0cw0"]
+
+[sub_resource type="Resource" id="Resource_ndoqd"]
+script = ExtResource("2_b0cw0")
+Texture = ExtResource("1_cl13s")
+TextureRect = Rect2(32, 0, 7, 3)
+Speed = 140.0
+Acceleration = 10.0
+LifeTime = 2.0
+Damage = 40.0
+Extras = null
+metadata/_custom_type_script = "uid://cxxhqxh8q1t64"
+
+[resource]
+script = ExtResource("1_l2hh5")
+BulletScene = ExtResource("1_chh88")
+BulletResource = SubResource("Resource_ndoqd")
+WeaponIcon = ExtResource("1_cl13s")
+IconRect = Rect2(0, 0, 32, 16)
+metadata/_custom_type_script = "uid://63ykb1bpx0u7"
