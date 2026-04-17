@@ -13,4 +13,9 @@ public partial class GameManager : Node
     {
         Instance = this;
     }
+
+    public void GoToMenu()
+    {
+        foreach (var nodes in Pausable.GetChildren()) nodes.QueueFree();
+    }
 }

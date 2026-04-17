@@ -24,4 +24,9 @@ public partial class Player : Unit
             Attack.ExecuteAttack(attackAngle, this);
         }
     }
+
+    public override void _ExitTree()
+    {
+        GameManager.Instance.GoToMenu();
+    }
 }

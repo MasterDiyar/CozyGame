@@ -13,7 +13,7 @@ public partial class Brain : Node2D
 		March,
 		Shoot
 	}
-	Timer timer = new Timer();
+	Timer timer = new();
 
 	[Export] private Node2D texture;
 	[Export] private Attack[] weapons;
@@ -39,6 +39,7 @@ public partial class Brain : Node2D
 			_pathways = pw;
 			_hasPathways = true;
 		}
+		timer.Start();
 	}
 
 	void Search()
@@ -51,10 +52,8 @@ public partial class Brain : Node2D
 		else 
 			_preferableState = State.Idle;
 		
-
 		var a = GD.Randf() > 0.5f;
-		_currentState = _preferableState switch
-		{
+		_currentState = _preferableState switch {
 			State.Move => a ? State.Idle : State.Move,
 			State.Idle => a ? State.Move : State.Idle,
 			State.Prepare => a ? State.Prepare : State.Move,
