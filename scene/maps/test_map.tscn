@@ -17,4 +17,4 @@ texture = ExtResource("2_cny17")
 position = Vector2(3, -305)
 
 [node name="Unit" parent="." unique_id=902821926 instance=ExtResource("4_3x1ky")]
-position = Vector2(199, -51)
+position = Vector2(179.39673, -48.06613)

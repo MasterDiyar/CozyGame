@@ -32,6 +32,7 @@ project/assembly_name="Testcase"
 
 folder_colors={
 "res://asset/": "yellow",
+"res://scene/weapons/": "teal",
 "res://script/": "blue",
 "res://script/player/": "red"
 }

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b2bsoba6dcmgi" path="res://asset/units/Guns.png" id="1_cl13s"]
 [ext_resource type="Script" uid="uid://63ykb1bpx0u7" path="res://script/weapon/WeaponResource.cs" id="1_l2hh5"]
 [ext_resource type="Script" uid="uid://cxxhqxh8q1t64" path="res://script/bullet/BulletResource.cs" id="2_b0cw0"]
+[ext_resource type="PackedScene" uid="uid://d2k0rv1vijf5n" path="res://scene/particles/smoke.tscn" id="4_b0cw0"]
 
 [sub_resource type="Resource" id="Resource_ndoqd"]
 script = ExtResource("2_b0cw0")
@@ -20,6 +21,7 @@ metadata/_custom_type_script = "uid://cxxhqxh8q1t64"
 script = ExtResource("1_l2hh5")
 BulletScene = ExtResource("1_chh88")
 BulletResource = SubResource("Resource_ndoqd")
+ParticleScene = ExtResource("4_b0cw0")
 WeaponIcon = ExtResource("1_cl13s")
 IconRect = Rect2(0, 0, 32, 16)
 metadata/_custom_type_script = "uid://63ykb1bpx0u7"

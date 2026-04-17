@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b3ni8atb2eqll" path="res://scene/player/dash.tscn" id="4_5lop3"]
 [ext_resource type="Script" uid="uid://c0csvyewogpkt" path="res://script/player/PlayerCam.cs" id="5_ajqqa"]
 [ext_resource type="PackedScene" uid="uid://yrlu32djuo4d" path="res://scene/player/Attack.tscn" id="7_732fb"]
+[ext_resource type="Resource" uid="uid://dh30u1wfjuj0q" path="res://scene/weapons/knifer.tres" id="8_hfhxk"]
 
 [sub_resource type="Resource" id="Resource_732fb"]
 script = ExtResource("2_rkmeh")
@@ -39,12 +40,18 @@ _playerBody = NodePath("../BodyNode")
 _playerCam = NodePath("../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1993826136]
-position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+rotation_smoothing_speed = 20.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
 editor_draw_drag_margin = true
 script = ExtResource("5_ajqqa")
 
 [node name="BodyNode" parent="." unique_id=274374573 instance=ExtResource("2_cm2cf")]
 
 [node name="attack" parent="." unique_id=1839049909 instance=ExtResource("7_732fb")]
+WeaponRes = ExtResource("8_hfhxk")

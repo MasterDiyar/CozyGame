@@ -67,6 +67,7 @@ public partial class Brain : Node2D
 
 	public override void _Process(double delta)
 	{
+		if (_player == null) _player = (Player)GameManager.Instance.Player;
 		var dt = (float)delta;
 		var dir = _player.GlobalPosition - GlobalPosition;
 		switch (_currentState)
