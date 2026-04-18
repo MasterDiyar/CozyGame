@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://ci1ed4my4rj76"]
+
+[ext_resource type="PackedScene" uid="uid://bk4g6iaqhwhv2" path="res://scene/prefab/upgrade_button.tscn" id="1_af4m0"]
+
+[node name="Knifer" type="Control" unique_id=1358699208]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UpgradeButton" parent="." unique_id=2066506352 node_paths=PackedStringArray("button") instance=ExtResource("1_af4m0")]
+layout_mode = 0
+offset_left = 39.45453
+offset_top = 225.36363
+offset_right = 75.45453
+offset_bottom = 250.36363
+text = "second
+knife"
+button = []
+
+[node name="UpgradeButton2" parent="." unique_id=93545576 node_paths=PackedStringArray("button") instance=ExtResource("1_af4m0")]
+layout_mode = 0
+offset_left = 174.90909
+offset_top = 155.36363
+offset_right = 210.90909
+offset_bottom = 180.36363
+button = []
+
+[node name="UpgradeButton3" parent="." unique_id=35843502 node_paths=PackedStringArray("button") instance=ExtResource("1_af4m0")]
+layout_mode = 0
+offset_left = 150.0
+offset_top = 291.0
+offset_right = 186.0
+offset_bottom = 316.0
+text = "third
+knife"
+button = [NodePath("../UpgradeButton")]
+
+[node name="UpgradeButton4" parent="." unique_id=373172256 node_paths=PackedStringArray("button") instance=ExtResource("1_af4m0")]
+layout_mode = 0
+offset_left = 263.99997
+offset_top = 128.99998
+offset_right = 299.99997
+offset_bottom = 153.99998
+button = []
+
+[node name="UpgradeButton5" parent="." unique_id=115444236 node_paths=PackedStringArray("button") instance=ExtResource("1_af4m0")]
+layout_mode = 0
+offset_left = 278.54544
+offset_top = 202.63637
+offset_right = 314.54544
+offset_bottom = 227.63637
+button = []
+
+[node name="UpgradeButton6" parent="." unique_id=216800580 node_paths=PackedStringArray("button") instance=ExtResource("1_af4m0")]
+layout_mode = 0
+offset_left = 375.81815
+offset_top = 247.18181
+offset_right = 411.81815
+offset_bottom = 272.18182
+button = []

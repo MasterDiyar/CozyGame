@@ -4,16 +4,16 @@ using System;
 public partial class Attack : Node2D
 {
 	[Export] public WeaponResource WeaponRes;
-	 PackedScene Bullet, particle;
-	BulletResource BulletResource;
-	 private int count;
-	 private float AngleOffset, SpawnOffset, StartAngle, randomness;
+	public PackedScene Bullet, particle;
+	public BulletResource BulletResource;
+	public int count;
+	public float AngleOffset, SpawnOffset, StartAngle, randomness;
 
-	private float attackTime = 2;
-	CpuParticles2D particles;
+	public float attackTime = 2;
+	public CpuParticles2D particles;
 	
 
-	private float _timer = 0;
+	public float _timer = 0;
 	public override void _Ready()
 	{
 		SetupWeapon(WeaponRes);
@@ -23,7 +23,7 @@ public partial class Attack : Node2D
 	{
 		WeaponRes = res;
 		Bullet = WeaponRes.BulletScene;
-		BulletResource = WeaponRes.BulletResource;
+		BulletResource = (BulletResource)WeaponRes.BulletResource.Duplicate();
 		count = WeaponRes.Count;
 		AngleOffset = WeaponRes.AngleOffset;
 		StartAngle = WeaponRes.AngleStarter;
@@ -35,6 +35,7 @@ public partial class Attack : Node2D
 		particles?.QueueFree();
 		
 		particles = particle.Instantiate<CpuParticles2D>();
+		particles.OneShot = true;
 		AddChild(particles);
 
 	}
@@ -48,6 +49,7 @@ public partial class Attack : Node2D
 
 	public void ExecuteAttack(float angle, Unit executer)
 	{
+		particles.SetEmitting(true);
 		if (_timer < attackTime) return;
 		_timer = 0;
 		var totalAngle = angle + StartAngle;

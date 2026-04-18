@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c20i60a4n7lis"]
 
 [ext_resource type="PackedScene" uid="uid://bk4g6iaqhwhv2" path="res://scene/prefab/upgrade_button.tscn" id="1_2gcxj"]
-[ext_resource type="Script" path="res://script/ui/UpgradeTree.cs" id="1_fw4t3"]
+[ext_resource type="Script" uid="uid://d723irpkivv6" path="res://script/ui/UpgradeTree.cs" id="1_fw4t3"]
 [ext_resource type="Script" uid="uid://bkwnipwcpt4im" path="res://script/effects/CostResource.cs" id="2_fw4t3"]
 [ext_resource type="Script" uid="uid://dp2vhiw1mmsor" path="res://script/effects/StateChangeEffect.cs" id="4_rlxuj"]
 [ext_resource type="Script" uid="uid://vckdh8ex1d7i" path="res://script/effects/BodyChangeEffect.cs" id="5_hthm1"]
@@ -29,12 +29,24 @@ part = 2
 texture = ExtResource("6_4d0lc")
 metadata/_custom_type_script = "uid://vckdh8ex1d7i"
 
+[sub_resource type="Resource" id="Resource_3fvon"]
+script = ExtResource("5_hthm1")
+part = 3
+texture = ExtResource("6_4d0lc")
+metadata/_custom_type_script = "uid://vckdh8ex1d7i"
+
 [sub_resource type="Resource" id="Resource_fw4t3"]
 script = ExtResource("2_fw4t3")
 Strength = 3.0
 Density = 3.0
 Versatility = 1.0
 metadata/_custom_type_script = "uid://bkwnipwcpt4im"
+
+[sub_resource type="Resource" id="Resource_62cog"]
+script = ExtResource("5_hthm1")
+part = 1
+texture = ExtResource("6_4d0lc")
+metadata/_custom_type_script = "uid://vckdh8ex1d7i"
 
 [sub_resource type="Resource" id="Resource_yo2m8"]
 script = ExtResource("2_fw4t3")
@@ -88,7 +100,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Dash" parent="ButtonList" unique_id=2066506352 instance=ExtResource("1_2gcxj")]
+[node name="Dash" parent="ButtonList" unique_id=2066506352 node_paths=PackedStringArray("button") instance=ExtResource("1_2gcxj")]
 layout_mode = 0
 offset_left = 97.92563
 offset_top = 255.21127
@@ -98,8 +110,9 @@ tooltip_text = "s: 1 d: 1 v: 1
 "
 text = "Add Dash"
 IsOpen = true
+button = []
 cost = SubResource("Resource_rlxuj")
-effect = SubResource("Resource_c34fn")
+effects = Array[Object]([SubResource("Resource_c34fn")])
 
 [node name="Legification" parent="ButtonList" unique_id=2108962036 node_paths=PackedStringArray("button") instance=ExtResource("1_2gcxj")]
 layout_mode = 0
@@ -109,9 +122,9 @@ offset_right = 248.0
 offset_bottom = 223.0
 tooltip_text = "s: 2 d: 1 v: 1"
 text = "Legification"
-button = NodePath("../Dash")
+button = [NodePath("../Dash")]
 cost = SubResource("Resource_2gcxj")
-effect = SubResource("Resource_8vn3p")
+effects = Array[Object]([SubResource("Resource_8vn3p"), SubResource("Resource_3fvon")])
 
 [node name="Bodyfication" parent="ButtonList" unique_id=1302687303 node_paths=PackedStringArray("button") instance=ExtResource("1_2gcxj")]
 layout_mode = 0
@@ -122,8 +135,9 @@ offset_bottom = 223.0
 tooltip_text = "s: 3 d: 3 v: 1"
 text = "Bodyfication
 "
-button = NodePath("../Legification")
+button = [NodePath("../Legification")]
 cost = SubResource("Resource_fw4t3")
+effects = Array[Object]([SubResource("Resource_62cog")])
 
 [node name="Handufufcattion" parent="ButtonList" unique_id=1339509591 node_paths=PackedStringArray("button") instance=ExtResource("1_2gcxj")]
 layout_mode = 0
@@ -134,7 +148,7 @@ offset_bottom = 172.0
 tooltip_text = "s: 3 d: 2 v: 1
 B: 5"
 text = "Handificattion"
-button = NodePath("../Legification")
+button = [NodePath("../Legification")]
 cost = SubResource("Resource_yo2m8")
 
 [node name="Realization" parent="ButtonList" unique_id=1556322895 node_paths=PackedStringArray("button") instance=ExtResource("1_2gcxj")]
@@ -144,7 +158,7 @@ offset_top = 201.0
 offset_right = 532.0
 offset_bottom = 226.0
 text = "Realization"
-button = NodePath("../Bodyfication")
+button = [NodePath("../FillHeaded"), NodePath("../Handufufcattion"), NodePath("../Bodyfication")]
 cost = SubResource("Resource_hthm1")
 
 [node name="FillHeaded" parent="ButtonList" unique_id=420311995 node_paths=PackedStringArray("button") instance=ExtResource("1_2gcxj")]
@@ -154,5 +168,5 @@ offset_top = 85.0
 offset_right = 381.0
 offset_bottom = 110.0
 text = "FillHeaded"
-button = NodePath("../Legification")
+button = [NodePath("../Legification")]
 cost = SubResource("Resource_4d0lc")

@@ -1,15 +1,18 @@
 using Godot;
 using System;
+using System.Linq;
 using Testcase.script.effects;
 using Testcase.script.player;
 
 public partial class UpgradeButton : Button
 {
 	[Export] public bool IsOpen = false, IsBuyed = false;
-	[Export] public UpgradeButton button;
+	[Export] public UpgradeButton[] button;
 	[Export] CostResource cost;
-	[Export] Effect effect;
+	[Export] Effect[] effects;
 	[Export] private Line2D line;
+
+	[Export] private UpgradeButton orButton;
 
 	public Action parentBuyed;
 		
@@ -24,9 +27,15 @@ public partial class UpgradeButton : Button
 		
 		Disabled = !IsOpen;
 		
-		if (button == null) return;
-		button.parentBuyed += Tesc;
-		Visible = button.IsOpen;
+		if (orButton != null)
+			orButton.parentBuyed += Tesc;
+		
+		
+		if (button == null || button.Length <= 0) return;
+		foreach (var upgradeButton in button) {
+			upgradeButton.parentBuyed += Tesc;
+			Visible = upgradeButton.IsOpen;
+		}
 		CheckRequirements();
 		SetLine();
 	}
@@ -34,10 +43,18 @@ public partial class UpgradeButton : Button
 
 	void SetLine()
 	{
-		Vector2 startPos = Size / 2;
-        Vector2 endPos = (button.Position + button.Size / 2) - Position;
-        line.Points = [startPos, endPos];
-        line.ShowBehindParent = true;
+		for (int i = 0; i < button.Length; i++) {
+			var targetBtn = button[i];
+			if (targetBtn == null) continue;
+
+			Line2D currentLine = (i == 0) ? line : (Line2D)line.Duplicate();
+			if (i > 0) AddChild(currentLine);
+
+			Vector2 startPos = Size / 2;
+			Vector2 endPos = (targetBtn.Position + targetBtn.Size / 2) - Position;
+			currentLine.Points = [startPos, endPos];
+			currentLine.ShowBehindParent = true;
+		}
 	}
 
 	void Tesc()
@@ -47,7 +64,17 @@ public partial class UpgradeButton : Button
 	
 	bool CheckRequirements()
 	{
-		if (button is { IsOpen: false }) return false;
+		if (orButton is { IsBuyed: true }) {
+			Disabled = true;
+			return false;
+		}
+
+		if (button is { Length: > 0 }) {
+			if (button.Any(btn => btn is { IsOpen: false })) {
+				Disabled = true;
+				return false; 
+			}
+		}
 		Show();
 		Disabled = !cost.CanAfford(_player.CurrentResources);
 		return !Disabled;
@@ -55,12 +82,21 @@ public partial class UpgradeButton : Button
 	
 	void OnClick()
 	{
-		if (cost.CanAfford(_player.CurrentResources)) {
-			cost.Spend(_player.CurrentResources); 
-			effect.Apply(_player);               
-			IsOpen = true;
-			IsBuyed = true;
-			parentBuyed?.Invoke();
+		if (IsBuyed) return;
+		if (!cost.CanAfford(_player.CurrentResources)) return;
+		cost.Spend(_player.CurrentResources);
+		
+		if (effects == null) {
+			GD.PrintErr("you forgot to add upgrade effects to :", Name);
+			return;
 		}
+		foreach (var effect in effects)
+			effect.Apply(_player);      
+		
+		         
+		IsOpen = true;
+		IsBuyed = true;
+		parentBuyed?.Invoke();
+		Disabled = true;
 	}
 }
