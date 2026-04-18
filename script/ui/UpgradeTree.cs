@@ -8,4 +8,7 @@ public partial class UpgradeTree : Control
 		if (evt.IsActionPressed("esc"))
 			Hide();
 	}
+
+	public void AddToTree(PackedScene node) => GetNode<Control>("ButtonList").AddChild(node.Instantiate());
+	
 }

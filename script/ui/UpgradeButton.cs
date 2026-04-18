@@ -76,15 +76,19 @@ public partial class UpgradeButton : Button
 			}
 		}
 		Show();
-		Disabled = !cost.CanAfford(_player.CurrentResources);
+		if (cost != null)
+			Disabled = !cost.CanAfford(_player.CurrentResources);
+		else Disabled = false;
 		return !Disabled;
 	}
 	
 	void OnClick()
 	{
 		if (IsBuyed) return;
-		if (!cost.CanAfford(_player.CurrentResources)) return;
-		cost.Spend(_player.CurrentResources);
+		if (cost != null) {
+			if (!cost.CanAfford(_player.CurrentResources)) return;
+			cost.Spend(_player.CurrentResources);
+		}
 		
 		if (effects == null) {
 			GD.PrintErr("you forgot to add upgrade effects to :", Name);

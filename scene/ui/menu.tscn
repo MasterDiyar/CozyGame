@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dk5v1gmb7aiim"]
+
+[ext_resource type="Script" uid="uid://ck6mf5a7pwgp7" path="res://script/ui/Menu.cs" id="1_rsrr4"]
+[ext_resource type="PackedScene" uid="uid://d1nqqd4yxsfbc" path="res://scene/game.tscn" id="2_m1yy3"]
+
+[node name="Menu" type="Control" unique_id=118840521 node_paths=PackedStringArray("Play", "Start", "Pick")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rsrr4")
+Play = NodePath("Button")
+Start = NodePath("Control/Button")
+Pick = NodePath("Control/OptionButton")
+PlayScene = ExtResource("2_m1yy3")
+
+[node name="Button" type="Button" parent="." unique_id=1964095136]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 36.0
+offset_right = 134.0
+offset_bottom = 76.0
+theme_override_font_sizes/font_size = 24
+text = "PLAY"
+
+[node name="Control" type="Control" parent="." unique_id=1803539129]
+visible = false
+layout_mode = 1
+anchor_right = 0.22200002
+anchor_bottom = 0.069000006
+offset_left = 536.0
+offset_top = 121.0
+offset_right = 767.76
+offset_bottom = 602.48
+
+[node name="OptionButton" type="OptionButton" parent="Control" unique_id=451944961]
+layout_mode = 0
+offset_right = 222.0
+offset_bottom = 37.0
+item_count = 4
+popup/item_0/text = "Knifer"
+popup/item_0/id = 0
+popup/item_1/text = "Musketer"
+popup/item_1/id = 1
+popup/item_2/text = "Skirmisher"
+popup/item_2/id = 2
+popup/item_3/text = "Swordsman"
+popup/item_3/id = 3
+
+[node name="Button" type="Button" parent="Control" unique_id=283720011]
+layout_mode = 0
+offset_left = 235.0
+offset_top = -1.0
+offset_right = 321.0041
+offset_bottom = 38.806488
+text = "start"
