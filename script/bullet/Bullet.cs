@@ -7,6 +7,7 @@ public partial class Bullet : Area2D
 	private float Acceleration = 0;
 	private float Damage = 0;
 	private float LifeTime = 0;
+	private float LifeTimeConsume = 0;
 	public Unit dontTouchUnit;
 	[Export] public BulletResource bulletResource;
 	public override void _Ready()
@@ -17,6 +18,7 @@ public partial class Bullet : Area2D
 		Acceleration = bulletResource.Acceleration;
 		Damage = bulletResource.Damage;
 		LifeTime = bulletResource.LifeTime;
+		LifeTimeConsume = bulletResource.LifeTimeConsume;
 
 		var texture = GetNode<Sprite2D>("Texture");
 		texture.Texture = bulletResource.Texture;
@@ -34,7 +36,7 @@ public partial class Bullet : Area2D
 	{
 		if (body is not Unit uit) return;
 		if (uit == dontTouchUnit) return;
-			
+		LifeTime -= LifeTimeConsume;
 		uit.TakeDamage(Damage);
 	}
 

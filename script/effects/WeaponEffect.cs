@@ -13,10 +13,6 @@ using Testcase.script.player;
         if (unit is not Player pl) return;
 
         var weapon = pl.GetNode<Attack>("attack");
-        
-        
-        
-        throw new NotImplementedException();
     }
 
     private void ChangeWeaponStats(Attack wep, WhatChange change)
@@ -33,6 +29,9 @@ using Testcase.script.player;
                 break;
             case WhatChange.LifeTime:
                 wep.BulletResource.LifeTime = DoThing(wep.BulletResource.LifeTime, number, _howChange);
+                break;
+            case WhatChange.LifeTimeConsume:
+                wep.BulletResource.LifeTimeConsume = DoThing(wep.BulletResource.LifeTimeConsume, number, _howChange);
                 break;
             case WhatChange.Damage:
                 wep.BulletResource.Damage = DoThing(wep.BulletResource.Damage, number, _howChange);
@@ -74,6 +73,7 @@ using Testcase.script.player;
         Speed,
         Acceleration,
         LifeTime,
+        LifeTimeConsume,
         Damage,
         Count,
         AngleOffset,

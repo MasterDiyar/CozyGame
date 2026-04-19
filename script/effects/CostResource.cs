@@ -33,13 +33,25 @@ namespace Testcase.script.effects;
 
     public void Spend(CostResource wallet)
     {
-        wallet.Strength -= Strength;
-        wallet.Density -= Density;
-        wallet.Versatility -= Versatility;
         wallet.Silicon -= Silicon;
         wallet.Iron -= Iron;
         wallet.Gold -= Gold;
         wallet.Silver -= Silver;
         wallet.Bronze -= Bronze;
+    }
+
+    public override string ToString()
+    {
+        var a = "";
+        if (Strength > 0) a += $"S: {Strength} ";
+        if (Density > 0) a += $"D: {Density} ";
+        if (Versatility > 0) a += $"V: {Versatility} \n\n";
+        if (Silicon > 0) a += $"si: {Silicon} ";
+        if (Iron > 0) a += $"fe: {Iron} ";
+        if (Gold > 0) a += $"au: {Gold} \n";
+        if (Silver > 0) a += $"ag: {Silver} ";
+        if (Bronze > 0) a += $"bronze: {Bronze} ";
+        
+        return a;
     }
 }

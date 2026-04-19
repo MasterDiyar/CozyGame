@@ -9,6 +9,7 @@ using Godot;
     [Export] public float Speed;
     [Export] public float Acceleration;
     [Export] public float LifeTime;
+    [Export] public float LifeTimeConsume;
     [Export] public float Damage;
 
     [Export] public PackedScene[] Extras;

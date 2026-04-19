@@ -36,6 +36,8 @@ public partial class UpgradeButton : Button
 			upgradeButton.parentBuyed += Tesc;
 			Visible = upgradeButton.IsOpen;
 		}
+
+		TooltipText = cost.ToString();
 		CheckRequirements();
 		SetLine();
 	}

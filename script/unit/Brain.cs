@@ -73,8 +73,8 @@ public partial class Brain : Node2D
 		{
 			case State.Move:
 				_animationPlayer.Play("Move");
-				dir = dir.Normalized();
-				_unit.Velocity = dir * _unit.MaxSpeed * dt;
+				Vector2 targetVelocity = dir.Normalized() * _unit.MaxSpeed;
+				_unit.Velocity = _unit.Velocity.MoveToward(targetVelocity, 1500f * dt);
 				_unit.MoveAndSlide();
 				break;
 			case State.Idle:

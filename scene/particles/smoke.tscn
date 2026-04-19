@@ -12,17 +12,18 @@ _data = [Vector2(0, 0.51685405), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Gradient" id="Gradient_ik1ln"]
-colors = PackedColorArray(1.0780092, 1.0780092, 1.0780092, 0.76862746, 1, 1, 1, 0.30980393)
+colors = PackedColorArray(1.0780092, 1.0780092, 1.0780092, 0.76862746, 1, 1, 1, 0)
 
 [node name="CPUParticles2D" type="CPUParticles2D" unique_id=3095901]
 amount = 12
 texture = ExtResource("1_ujr0s")
 lifetime = 3.0
 explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 3.0
 spread = 180.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 5.0
-initial_velocity_max = 15.0
+initial_velocity_max = 2.0
 angular_velocity_min = 3.0
 angular_velocity_max = 8.0
 angle_max = 180.0
