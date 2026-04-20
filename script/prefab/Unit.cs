@@ -20,4 +20,13 @@ public partial class Unit : CharacterBody2D
 		
 		if (Hp < 0) QueueFree();
 	}
+
+	void OnDie()
+	{
+		foreach (var VARIABLE in GetChildren())
+		{
+			if (VARIABLE is ThrowOnDie d)
+				d.ExecuteOrder66();
+		}
+	}
 }

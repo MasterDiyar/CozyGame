@@ -5,10 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://clfcwdr5wdu0j" path="res://scene/units/brain.tscn" id="3_0pp1t"]
 [ext_resource type="PackedScene" uid="uid://yrlu32djuo4d" path="res://scene/player/Attack.tscn" id="5_0s8bm"]
 [ext_resource type="Resource" uid="uid://di50obk6upual" path="res://scene/weapons/ShotGun.tres" id="5_r38bc"]
+[ext_resource type="PackedScene" uid="uid://b617ibqsifgx" path="res://scene/units/throw_on_die.tscn" id="6_0s8bm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5pee"]
 
-[node name="Unit" unique_id=902821926 instance=ExtResource("1_l5pee")]
+[node name="Musket" unique_id=902821926 instance=ExtResource("1_l5pee")]
 MaxSpeed = 80.0
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=802151661]
@@ -23,3 +24,6 @@ AnimationPlayerPath = NodePath("../Node2D/AnimationPlayer")
 
 [node name="attack" parent="." index="3" unique_id=1839049909 instance=ExtResource("5_0s8bm")]
 WeaponRes = ExtResource("5_r38bc")
+
+[node name="ThrowOnDie" parent="." index="4" unique_id=1181905723 instance=ExtResource("6_0s8bm")]
+ResourceDictionary = Dictionary[int, float]({})

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://r2ax3whwnjs2"]
+
+[ext_resource type="Script" uid="uid://b370wy5ijd8yc" path="res://script/game/ResourceContainer.cs" id="1_30mkh"]
+[ext_resource type="AudioStream" uid="uid://b86fiw15tjv5g" path="res://asset/sound/pickup.mp3" id="1_csbia"]
+[ext_resource type="Texture2D" uid="uid://d1nwhvhdalp1r" path="res://asset/units/resources.png" id="2_8cum3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqere"]
+
+[node name="resourceContainer" type="Area2D" unique_id=1828049242]
+script = ExtResource("1_30mkh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=569581149]
+shape = SubResource("RectangleShape2D_lqere")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1782384027]
+texture = ExtResource("2_8cum3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=521887060]
+stream = ExtResource("1_csbia")
+volume_db = -8.667
+pitch_scale = 0.75
+max_polyphony = 3

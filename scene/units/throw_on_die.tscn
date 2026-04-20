@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://b617ibqsifgx"]
+
+[ext_resource type="Script" uid="uid://d1f7e0pwey1xs" path="res://script/unit/ThrowOnDie.cs" id="1_12fj7"]
+[ext_resource type="PackedScene" uid="uid://r2ax3whwnjs2" path="res://scene/item/res_container.tscn" id="2_7batg"]
+
+[node name="ThrowOnDie" type="Node2D" unique_id=1181905723]
+script = ExtResource("1_12fj7")
+ResourceContainerScene = ExtResource("2_7batg")

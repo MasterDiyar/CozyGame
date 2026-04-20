@@ -1,4 +1,5 @@
 using Godot;
+using Testcase.script.game;
 
 namespace Testcase.script.effects;
 
@@ -29,6 +30,18 @@ namespace Testcase.script.effects;
         if (wallet.Bronze < Bronze) return false;
 
         return true;
+    }
+
+    public void AddResource(ResName resource, float Count)
+    {
+        switch (resource)
+        {
+            case ResName.Bronze: Bronze += Count; break;
+            case ResName.Iron: Iron += Count; break;
+            case ResName.Gold:    Gold += Count; break;
+            case ResName.Silver:  Silver += Count; break;
+            case ResName.Silicon: Silicon += Count; break;
+        }
     }
 
     public void Spend(CostResource wallet)
