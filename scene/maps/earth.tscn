@@ -2,23 +2,28 @@
 
 [ext_resource type="Shader" uid="uid://bxtf265rxck2u" path="res://shader/earth_shaderV1.gdshader" id="1_inemv"]
 [ext_resource type="Texture2D" uid="uid://c224o3q5iw068" path="res://asset/map/er.png" id="2_4nvfd"]
-[ext_resource type="Texture2D" uid="uid://o0d7jhpgm4l" path="res://asset/map/ee.png" id="2_eeq2e"]
-[ext_resource type="Texture2D" uid="uid://7xv4gx6ucyws" path="res://asset/map/ea.png" id="3_5hqyx"]
+[ext_resource type="Texture2D" uid="uid://c2ql0owwtfjn4" path="res://asset/map/se.png" id="2_5hqyx"]
+[ext_resource type="Texture2D" uid="uid://by1dh1gutpu1o" path="res://asset/map/sa.png" id="4_w1yo3"]
 [ext_resource type="Texture2D" uid="uid://da7guphfqrabd" path="res://asset/map/walter.png" id="5_w1yo3"]
+
+[sub_resource type="Gradient" id="Gradient_4nvfd"]
+colors = PackedColorArray(0.7, 0, 0.011666489, 1, 2.0696223e-06, 0.49572027, 0.3735369, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_4nvfd"]
 seed = 1
 frequency = 0.0155
+fractal_type = 2
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5hqyx"]
 noise = SubResource("FastNoiseLite_4nvfd")
+color_ramp = SubResource("Gradient_4nvfd")
 as_normal_map = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6tw4m"]
 shader = ExtResource("1_inemv")
-shader_parameter/layer_r = ExtResource("2_eeq2e")
-shader_parameter/layer_g = ExtResource("3_5hqyx")
-shader_parameter/layer_b = ExtResource("2_4nvfd")
+shader_parameter/layer_r = ExtResource("4_w1yo3")
+shader_parameter/layer_g = ExtResource("2_4nvfd")
+shader_parameter/layer_b = ExtResource("2_5hqyx")
 shader_parameter/noise_img = SubResource("NoiseTexture2D_5hqyx")
 shader_parameter/uv_scale = 1.0
 

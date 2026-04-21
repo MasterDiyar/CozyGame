@@ -10,6 +10,7 @@
 
 [node name="Earth" parent="." unique_id=462381383 instance=ExtResource("1_6sydo")]
 position = Vector2(-727, -173)
+skew = 0.116937056
 
 [node name="Player" parent="." unique_id=1560160023 instance=ExtResource("1_1lauk")]
 MaxHp = 900.0
