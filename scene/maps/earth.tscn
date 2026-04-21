@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dsnmvucmmyn75"]
+
+[ext_resource type="Shader" uid="uid://bxtf265rxck2u" path="res://shader/earth_shaderV1.gdshader" id="1_inemv"]
+[ext_resource type="Texture2D" uid="uid://c224o3q5iw068" path="res://asset/map/er.png" id="2_4nvfd"]
+[ext_resource type="Texture2D" uid="uid://o0d7jhpgm4l" path="res://asset/map/ee.png" id="2_eeq2e"]
+[ext_resource type="Texture2D" uid="uid://7xv4gx6ucyws" path="res://asset/map/ea.png" id="3_5hqyx"]
+[ext_resource type="Texture2D" uid="uid://da7guphfqrabd" path="res://asset/map/walter.png" id="5_w1yo3"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4nvfd"]
+seed = 1
+frequency = 0.0155
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5hqyx"]
+noise = SubResource("FastNoiseLite_4nvfd")
+as_normal_map = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6tw4m"]
+shader = ExtResource("1_inemv")
+shader_parameter/layer_r = ExtResource("2_eeq2e")
+shader_parameter/layer_g = ExtResource("3_5hqyx")
+shader_parameter/layer_b = ExtResource("2_4nvfd")
+shader_parameter/noise_img = SubResource("NoiseTexture2D_5hqyx")
+shader_parameter/uv_scale = 1.0
+
+[node name="Earth" type="Sprite2D" unique_id=462381383]
+
+[node name="Ee" type="Sprite2D" parent="." unique_id=1098344799]
+texture_filter = 3
+texture_repeat = 2
+material = SubResource("ShaderMaterial_6tw4m")
+position = Vector2(962, 519)
+scale = Vector2(1.1041666, 1)
+texture = ExtResource("5_w1yo3")
+region_enabled = true
+region_rect = Rect2(0, 0, 2048, 2048)

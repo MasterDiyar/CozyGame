@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://tggf83hxuru"]
 
 [ext_resource type="PackedScene" uid="uid://ck76o6ec3by4f" path="res://scene/player/player.tscn" id="1_1lauk"]
+[ext_resource type="PackedScene" uid="uid://dsnmvucmmyn75" path="res://scene/maps/earth.tscn" id="1_6sydo"]
 [ext_resource type="Texture2D" uid="uid://c4dr7b66gbyln" path="res://icon.svg" id="2_cny17"]
 [ext_resource type="PackedScene" uid="uid://c2glwv43pm647" path="res://scene/enviroment/altar.tscn" id="3_cny17"]
 [ext_resource type="PackedScene" uid="uid://cbitunrmeeed4" path="res://scene/units/MusketerUnit.tscn" id="4_3x1ky"]
 
 [node name="map" type="Node2D" unique_id=1666587264]
+
+[node name="Earth" parent="." unique_id=462381383 instance=ExtResource("1_6sydo")]
+position = Vector2(-727, -173)
 
 [node name="Player" parent="." unique_id=1560160023 instance=ExtResource("1_1lauk")]
 MaxHp = 900.0
