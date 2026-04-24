@@ -4,6 +4,7 @@ using System;
 public partial class Unit : CharacterBody2D
 {
 	[Export] public float MaxHp = 100f;
+	[Export] public float Armor = 1f;
 	[Export] public float MaxSpeed = 20f;
 	[Export] public float MaxPatrons = 4f;
 	
@@ -14,8 +15,9 @@ public partial class Unit : CharacterBody2D
 		Patrons = MaxPatrons;
 	}
 
-	public void TakeDamage(float damage)
+	public virtual void TakeDamage(float damage)
 	{
+		damage -= damage * Armor;
 		TakeRawDamage(damage);
 	}
 
@@ -27,8 +29,7 @@ public partial class Unit : CharacterBody2D
 
 	void OnDie()
 	{
-		foreach (var VARIABLE in GetChildren())
-		{
+		foreach (var VARIABLE in GetChildren()){
 			if (VARIABLE is ThrowOnDie d)
 				d.ExecuteOrder66();
 		}

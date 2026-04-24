@@ -44,9 +44,9 @@ popup/item_0/text = "Knifer"
 popup/item_0/id = 0
 popup/item_1/text = "Musketer"
 popup/item_1/id = 1
-popup/item_2/text = "Skirmisher"
+popup/item_2/text = "Bowman"
 popup/item_2/id = 2
-popup/item_3/text = "Swordsman"
+popup/item_3/text = "Mage"
 popup/item_3/id = 3
 
 [node name="Button" type="Button" parent="Control" unique_id=283720011]

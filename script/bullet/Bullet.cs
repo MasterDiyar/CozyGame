@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using Testcase.script.player;
 using Testcase.script.prefab;
 
 public partial class Bullet : Area2D
@@ -42,6 +43,10 @@ public partial class Bullet : Area2D
 		if (uit == dontTouchUnit) return;
 		LifeTime -= LifeTimeConsume;
 		uit.TakeDamage(Damage);
+		
+		if (dontTouchUnit is Player pl)
+			if (GD.Randf() < pl.VampirismChance)
+				pl.Hp = Mathf.Clamp(pl.Hp + Damage * pl.VampirismMultiplier, pl.Hp, pl.MaxHp);
 	}
 
 	public override void _Process(double delta)

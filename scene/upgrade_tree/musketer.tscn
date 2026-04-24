@@ -1,5 +1,124 @@
 [gd_scene format=3 uid="uid://0ik64pocpwdp"]
 
+[ext_resource type="PackedScene" uid="uid://bk4g6iaqhwhv2" path="res://scene/prefab/upgrade_button.tscn" id="1_6qjid"]
+[ext_resource type="Script" uid="uid://bkwnipwcpt4im" path="res://script/effects/CostResource.cs" id="2_b2wia"]
+[ext_resource type="Script" uid="uid://b1rgllml8q0yj" path="res://script/effects/WeaponEffect.cs" id="3_684gr"]
+
+[sub_resource type="Resource" id="Resource_ke2vs"]
+script = ExtResource("2_b2wia")
+Density = 1.0
+metadata/_custom_type_script = "uid://bkwnipwcpt4im"
+
+[sub_resource type="Resource" id="Resource_ad4ba"]
+script = ExtResource("3_684gr")
+_change = 5
+number = 1.0
+metadata/_custom_type_script = "uid://b1rgllml8q0yj"
+
+[sub_resource type="Resource" id="Resource_hxsql"]
+script = ExtResource("2_b2wia")
+metadata/_custom_type_script = "uid://bkwnipwcpt4im"
+
+[sub_resource type="Resource" id="Resource_y01j5"]
+script = ExtResource("3_684gr")
+_change = 6
+number = 1.0
+metadata/_custom_type_script = "uid://b1rgllml8q0yj"
+
+[sub_resource type="Resource" id="Resource_hsufr"]
+script = ExtResource("3_684gr")
+_change = 11
+number = 0.1
+metadata/_custom_type_script = "uid://b1rgllml8q0yj"
+
+[sub_resource type="Resource" id="Resource_h75gc"]
+script = ExtResource("2_b2wia")
+Strength = 1.0
+Density = 2.0
+Iron = 5.0
+Bronze = 15.0
+metadata/_custom_type_script = "uid://bkwnipwcpt4im"
+
+[sub_resource type="Resource" id="Resource_o64i4"]
+script = ExtResource("3_684gr")
+_change = 6
+number = 1.0
+metadata/_custom_type_script = "uid://b1rgllml8q0yj"
+
+[sub_resource type="Resource" id="Resource_uk7iy"]
+script = ExtResource("3_684gr")
+_change = 11
+number = 0.05
+metadata/_custom_type_script = "uid://b1rgllml8q0yj"
+
+[sub_resource type="Resource" id="Resource_clq6e"]
+script = ExtResource("2_b2wia")
+Density = 9.0
+Versatility = 5.0
+Silicon = 15.0
+Iron = 80.0
+Gold = 10.0
+Silver = 40.0
+metadata/_custom_type_script = "uid://bkwnipwcpt4im"
+
+[sub_resource type="Resource" id="Resource_fvjfl"]
+script = ExtResource("3_684gr")
+_change = 2
+_howChange = 1
+number = 35.0
+metadata/_custom_type_script = "uid://b1rgllml8q0yj"
+
+[sub_resource type="Resource" id="Resource_pyum0"]
+script = ExtResource("3_684gr")
+_change = 1
+number = 140.0
+metadata/_custom_type_script = "uid://b1rgllml8q0yj"
+
+[sub_resource type="Resource" id="Resource_65x4l"]
+script = ExtResource("2_b2wia")
+Density = 14.0
+Iron = 120.0
+Gold = 80.0
+metadata/_custom_type_script = "uid://bkwnipwcpt4im"
+
+[sub_resource type="Resource" id="Resource_b2wia"]
+script = ExtResource("3_684gr")
+_change = 2
+number = 40.0
+metadata/_custom_type_script = "uid://b1rgllml8q0yj"
+
+[sub_resource type="Resource" id="Resource_684gr"]
+script = ExtResource("3_684gr")
+_change = 1
+_howChange = 1
+number = 20.0
+metadata/_custom_type_script = "uid://b1rgllml8q0yj"
+
+[sub_resource type="Resource" id="Resource_3r3aq"]
+script = ExtResource("2_b2wia")
+Density = 7.0
+Iron = 120.0
+Gold = 5.0
+metadata/_custom_type_script = "uid://bkwnipwcpt4im"
+
+[sub_resource type="Resource" id="Resource_1bbnn"]
+script = ExtResource("3_684gr")
+_change = 5
+number = 10.0
+metadata/_custom_type_script = "uid://b1rgllml8q0yj"
+
+[sub_resource type="Resource" id="Resource_6qjid"]
+script = ExtResource("2_b2wia")
+Density = 3.0
+Iron = 40.0
+metadata/_custom_type_script = "uid://bkwnipwcpt4im"
+
+[sub_resource type="Resource" id="Resource_wjtr8"]
+script = ExtResource("3_684gr")
+_change = 5
+number = 5.0
+metadata/_custom_type_script = "uid://b1rgllml8q0yj"
+
 [node name="musketer" type="Control" unique_id=593112110]
 layout_mode = 3
 anchors_preset = 15
@@ -9,3 +128,137 @@ offset_right = -1920.0
 offset_bottom = -1080.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="LongShot" parent="." unique_id=2066506352 node_paths=PackedStringArray("button") instance=ExtResource("1_6qjid")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 1016.0
+offset_right = 97.0
+offset_bottom = 1054.0
+text = "long shot"
+button = []
+cost = SubResource("Resource_ke2vs")
+effects = Array[Object]([SubResource("Resource_ad4ba")])
+
+[node name="PoisonOnFire" parent="." unique_id=696148851 node_paths=PackedStringArray("button") instance=ExtResource("1_6qjid")]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 877.0
+offset_right = 451.0
+offset_bottom = 908.0
+text = "PoisonFire"
+button = []
+
+[node name="DashOnFire" parent="." unique_id=2041239478 node_paths=PackedStringArray("button") instance=ExtResource("1_6qjid")]
+layout_mode = 0
+offset_left = 247.0
+offset_top = 922.0
+offset_right = 349.0
+offset_bottom = 962.0
+text = "Dash on fire"
+button = []
+
+[node name="extraBullet2" parent="." unique_id=1391969923 node_paths=PackedStringArray("button") instance=ExtResource("1_6qjid")]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 929.0
+offset_right = 232.0
+offset_bottom = 960.0
+text = "Extra Bullet II"
+button = []
+cost = SubResource("Resource_hxsql")
+effects = Array[Object]([SubResource("Resource_y01j5"), SubResource("Resource_hsufr")])
+
+[node name="extraBullet1" parent="." unique_id=1840294707 node_paths=PackedStringArray("button") instance=ExtResource("1_6qjid")]
+layout_mode = 0
+offset_left = 122.0
+offset_top = 976.0
+offset_right = 220.0
+offset_bottom = 1007.0
+text = "Extra Bullet I"
+button = [NodePath("../LongShot")]
+cost = SubResource("Resource_h75gc")
+effects = Array[Object]([SubResource("Resource_o64i4"), SubResource("Resource_uk7iy")])
+
+[node name="RetartedShot" parent="." unique_id=939342302 node_paths=PackedStringArray("button", "orButton") instance=ExtResource("1_6qjid")]
+layout_mode = 0
+offset_left = 389.0
+offset_top = 1005.0
+offset_right = 524.0
+offset_bottom = 1036.0
+text = "Retarted Shot"
+button = [NodePath("../GrandDamage")]
+cost = SubResource("Resource_clq6e")
+effects = Array[Object]([SubResource("Resource_fvjfl"), SubResource("Resource_pyum0")])
+orButton = NodePath("../AcceleratedShot")
+
+[node name="AcceleratedShot" parent="." unique_id=2088027025 node_paths=PackedStringArray("button", "orButton") instance=ExtResource("1_6qjid")]
+layout_mode = 0
+offset_left = 389.0
+offset_top = 1046.0
+offset_right = 528.0
+offset_bottom = 1077.0
+text = "Accelerated Shot"
+button = [NodePath("../GrandDamage")]
+cost = SubResource("Resource_65x4l")
+effects = Array[Object]([SubResource("Resource_b2wia"), SubResource("Resource_684gr")])
+orButton = NodePath("../RetartedShot")
+
+[node name="GrandDamage" parent="." unique_id=1464890684 node_paths=PackedStringArray("button") instance=ExtResource("1_6qjid")]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 1047.0
+offset_right = 290.0
+offset_bottom = 1078.0
+text = "GrandDamage
+"
+button = [NodePath("../highDamage")]
+cost = SubResource("Resource_3r3aq")
+effects = Array[Object]([SubResource("Resource_1bbnn")])
+
+[node name="highDamage" parent="." unique_id=425506250 node_paths=PackedStringArray("button") instance=ExtResource("1_6qjid")]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 1046.0
+offset_right = 153.0
+offset_bottom = 1071.0
+text = "High Damage"
+button = [NodePath("../LongShot")]
+cost = SubResource("Resource_6qjid")
+effects = Array[Object]([SubResource("Resource_wjtr8")])
+
+[node name="fastFire4" parent="." unique_id=624990429 node_paths=PackedStringArray("button") instance=ExtResource("1_6qjid")]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 805.0
+offset_right = 97.0
+offset_bottom = 836.0
+text = "ClickShot"
+button = []
+
+[node name="fastFire3" parent="." unique_id=1796020369 node_paths=PackedStringArray("button") instance=ExtResource("1_6qjid")]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 844.0
+offset_right = 105.0
+offset_bottom = 875.0
+text = "Fast Fire III"
+button = []
+
+[node name="fastFire2" parent="." unique_id=64639207 node_paths=PackedStringArray("button") instance=ExtResource("1_6qjid")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 888.0
+offset_right = 98.0
+offset_bottom = 919.0
+text = "fast fire II"
+button = []
+
+[node name="fastFire1" parent="." unique_id=466292476 node_paths=PackedStringArray("button") instance=ExtResource("1_6qjid")]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 933.0
+offset_right = 96.0
+offset_bottom = 964.0
+text = "fast fire I"
+button = []
