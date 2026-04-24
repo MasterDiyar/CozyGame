@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dxq0pcx4wcbvv"]
+
+[ext_resource type="Script" uid="uid://h65sowktds5d" path="res://script/bullet/Poison.cs" id="1_p5q76"]
+
+[node name="Poison" type="Node" unique_id=913607177]
+script = ExtResource("1_p5q76")

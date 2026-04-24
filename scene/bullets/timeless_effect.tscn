@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dowjtrp7axjj4"]
+
+[ext_resource type="Script" path="res://script/bullet/TimelessEffect.cs" id="1_f6r3x"]
+
+[node name="TimelessEffect" type="Node" unique_id=615588607]
+script = ExtResource("1_f6r3x")

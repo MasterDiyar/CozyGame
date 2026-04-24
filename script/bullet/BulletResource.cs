@@ -12,6 +12,6 @@ using Godot;
     [Export] public float LifeTimeConsume;
     [Export] public float Damage;
 
-    [Export] public PackedScene[] Extras;
+    [Export] public int[] Extras;
 
 }

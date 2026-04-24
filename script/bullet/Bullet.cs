@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using Testcase.script.prefab;
 
 public partial class Bullet : Area2D
 {
@@ -10,6 +12,8 @@ public partial class Bullet : Area2D
 	private float LifeTimeConsume = 0;
 	public Unit dontTouchUnit;
 	[Export] public BulletResource bulletResource;
+	
+	List<TimelessEffect> effects;
 	public override void _Ready()
 	{
 		BodyEntered += OnBodyEntered; 
@@ -27,8 +31,8 @@ public partial class Bullet : Area2D
 		texture.Rotation = bulletResource.TextureRotation;
 
 		if (bulletResource.Extras == null || bulletResource.Extras.Length <= 0) return;
-		foreach (var extra in bulletResource.Extras)
-			AddChild(extra.Instantiate());
+		
+		GetEffects();
 
 	}
 
@@ -47,5 +51,24 @@ public partial class Bullet : Area2D
 		Speed += dt * Acceleration;
 		LifeTime -= dt;
 		if (LifeTime <= 0) QueueFree();
+	}
+
+	void GetEffects()
+	{
+		foreach (var extra in bulletResource.Extras) switch (extra)
+		{
+			case 1:
+				effects.Add(BulletFactory.GetPosionByLevel(1));
+				break;
+			case 2:
+				effects.Add(BulletFactory.GetPosionByLevel(2));
+				break;
+			case 3:
+				effects.Add(BulletFactory.GetPosionByLevel(3));
+				break;
+			case 4:
+				//TODO add other effects and make code more elegant
+				break;
+		}
 	}
 }

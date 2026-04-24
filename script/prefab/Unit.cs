@@ -16,9 +16,13 @@ public partial class Unit : CharacterBody2D
 
 	public void TakeDamage(float damage)
 	{
+		TakeRawDamage(damage);
+	}
+
+	public void TakeRawDamage(float damage)
+	{
 		Hp -= damage;
-		
-		if (Hp < 0) QueueFree();
+		if (Hp < 0) OnDie();
 	}
 
 	void OnDie()
@@ -28,5 +32,6 @@ public partial class Unit : CharacterBody2D
 			if (VARIABLE is ThrowOnDie d)
 				d.ExecuteOrder66();
 		}
+		QueueFree();
 	}
 }
