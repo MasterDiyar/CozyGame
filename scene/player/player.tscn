@@ -23,7 +23,7 @@ size = Vector2(20, 30)
 script = ExtResource("1_ajqqa")
 CurrentResources = SubResource("Resource_732fb")
 Attack = NodePath("attack")
-MaxSpeed = 80.0
+MaxSpeed = 60.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=478166182]
 shape = SubResource("RectangleShape2D_gh87g")

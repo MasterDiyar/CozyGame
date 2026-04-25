@@ -7,7 +7,7 @@ public partial class Game : Node2D
     public void PickedType(int type)
     {
         var a =GetNode<UpgradeTree>("UI/UpgradeTree");
-        var b = (new[] {"res://scene/upgrade_tree/knifer.tscn", "res://scene/upgrade_tree/"})[type];
+        var b = (new[] {"res://scene/upgrade_tree/knifer.tscn", "res://scene/upgrade_tree/musketer.tscn", "res://scene/upgrade_tree/bowman.tscn", "res://scene/upgrade_tree/mage.tscn"})[type];
         a.AddToTree(GD.Load<PackedScene>(b));
     }
     public override void _Ready()

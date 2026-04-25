@@ -1,8 +1,18 @@
 [gd_scene format=3 uid="uid://ci1ed4my4rj76"]
 
 [ext_resource type="PackedScene" uid="uid://bk4g6iaqhwhv2" path="res://scene/prefab/upgrade_button.tscn" id="1_af4m0"]
+[ext_resource type="Script" uid="uid://c7m1on7dt3ou" path="res://script/ui/UpgradeBranch.cs" id="1_igujc"]
 [ext_resource type="Script" uid="uid://bkwnipwcpt4im" path="res://script/effects/CostResource.cs" id="2_1c2ys"]
+[ext_resource type="Script" uid="uid://vckdh8ex1d7i" path="res://script/effects/BodyChangeEffect.cs" id="2_r7aht"]
 [ext_resource type="Script" uid="uid://b1rgllml8q0yj" path="res://script/effects/WeaponEffect.cs" id="3_igujc"]
+[ext_resource type="Texture2D" uid="uid://b0cjfrjrk4art" path="res://asset/units/knifge.png" id="3_j5ea7"]
+[ext_resource type="Resource" uid="uid://dh30u1wfjuj0q" path="res://scene/weapons/knifer.tres" id="4_j5ea7"]
+
+[sub_resource type="Resource" id="Resource_qmy4g"]
+script = ExtResource("2_r7aht")
+part = 6
+texture = ExtResource("3_j5ea7")
+metadata/_custom_type_script = "uid://vckdh8ex1d7i"
 
 [sub_resource type="Resource" id="Resource_g1xar"]
 script = ExtResource("2_1c2ys")
@@ -170,12 +180,16 @@ metadata/_custom_type_script = "uid://bkwnipwcpt4im"
 
 [node name="Knifer" type="Control" unique_id=1358699208]
 layout_mode = 3
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -1920.0
 offset_bottom = -1078.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_igujc")
+SetWeapon = SubResource("Resource_qmy4g")
+_weaponResource = ExtResource("4_j5ea7")
 
 [node name="UpgradeButton" parent="." unique_id=2066506352 node_paths=PackedStringArray("button") instance=ExtResource("1_af4m0")]
 layout_mode = 0

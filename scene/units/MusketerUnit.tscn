@@ -10,7 +10,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5pee"]
 
 [node name="Musket" unique_id=902821926 instance=ExtResource("1_l5pee")]
-MaxSpeed = 80.0
+MaxSpeed = 30.0
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=802151661]
 visible = false

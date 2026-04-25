@@ -9,7 +9,8 @@
 [node name="map" type="Node2D" unique_id=1666587264]
 
 [node name="Earth" parent="." unique_id=462381383 instance=ExtResource("1_6sydo")]
-position = Vector2(-727, -173)
+position = Vector2(-1615, -1020.99994)
+scale = Vector2(2, 2)
 skew = 0.116937056
 
 [node name="Player" parent="." unique_id=1560160023 instance=ExtResource("1_1lauk")]

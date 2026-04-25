@@ -13,11 +13,13 @@ public partial class Unit : CharacterBody2D
 	{
 		Hp = MaxHp;
 		Patrons = MaxPatrons;
+		
+		MaxSpeed = MaxSpeed+GD.Randf()*10f-5f;
 	}
 
 	public virtual void TakeDamage(float damage)
 	{
-		damage -= damage * Armor;
+		damage -= damage - damage * (100f - Armor)/100f;
 		TakeRawDamage(damage);
 	}
 

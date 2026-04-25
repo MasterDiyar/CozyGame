@@ -3,7 +3,7 @@ using System;
 
 public partial class BodyStructure : Node2D
 {
-    [Export] Sprite2D _body, _head, _leftArm, _rightArm, _leftLeg, _rightLeg;
+    [Export] Sprite2D _body, _head, _leftArm, _rightArm, _leftLeg, _rightLeg, _weapon;
     [Export] public AnimationPlayer Anim;
     public enum Telo
     {
@@ -21,6 +21,7 @@ public partial class BodyStructure : Node2D
         RightLeg,
         LeftArm,
         RightArm,
+        Weapon
     }
 
     [Export] public Telo MyBody = Telo.Stick;
@@ -37,6 +38,7 @@ public partial class BodyStructure : Node2D
             case BodyPart.RightArm: _rightArm.Texture = texture; break;
             case BodyPart.LeftLeg: _leftLeg.Texture = texture; break;
             case BodyPart.RightLeg: _rightLeg.Texture = texture; break;
+            case BodyPart.Weapon: _weapon.Texture = texture; break;
         }
         TextureChanged?.Invoke();
     }
@@ -48,6 +50,9 @@ public partial class BodyStructure : Node2D
             case Telo.Stick:
                 Anim.Play("StickMove");
                 break;
+            case Telo.Huge:
+                Anim.Play("HugeMove");
+                break;
         }
     }
 
@@ -57,6 +62,9 @@ public partial class BodyStructure : Node2D
         {
             case Telo.Stick:
                 Anim.Play("StickIdle1");
+                break;
+            case Telo.Huge:
+                Anim.Play("HugeIdle");
                 break;
         }
     }

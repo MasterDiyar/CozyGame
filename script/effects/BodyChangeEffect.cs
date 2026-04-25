@@ -9,7 +9,7 @@ using Testcase.script.player;
     public override void Apply(Unit unit)
     {
         if (unit is not Player pl) return;
-        pl.GetNode<BodyStructure>("BodyNode").ChangePart(part,  texture);
+        pl.Body.ChangePart(part,  texture);
         
     }
 }

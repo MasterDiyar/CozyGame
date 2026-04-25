@@ -49,14 +49,13 @@ public partial class Dash : Node2D
 		_dashTimer.Start();
 		_ghostTimer.Start();
 		EmitSignal(SignalName.DashStarted);
-		_playerCam.Shake(DashDuration, 20, 500);
+		_playerCam.Shake(DashDuration, 10, 100);
 	}
 
 	private void OnDashTimeout()
 	{
 		_isDashing = false;
 		_ghostTimer.Stop();
-		_target.Velocity = Vector2.Zero;
 		EmitSignal(SignalName.DashFinished);
 	}
 

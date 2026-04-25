@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://bfgxmvdp15cjg"]
 
+[ext_resource type="Script" uid="uid://c7m1on7dt3ou" path="res://script/ui/UpgradeBranch.cs" id="1_6t1yp"]
+
 [node name="bowman" type="Control" unique_id=1008644675]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +9,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6t1yp")
