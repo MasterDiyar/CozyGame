@@ -14,12 +14,12 @@ Speed = 140.0
 Acceleration = 10.0
 LifeTime = 5.0
 Damage = 40.0
-Extras = null
 metadata/_custom_type_script = "uid://cxxhqxh8q1t64"
 
 [resource]
 script = ExtResource("1_l2hh5")
 BulletScene = ExtResource("1_chh88")
+SpawnOffset = 32.0
 BulletResource = SubResource("Resource_ndoqd")
 ParticleScene = ExtResource("4_b0cw0")
 WeaponIcon = ExtResource("1_cl13s")

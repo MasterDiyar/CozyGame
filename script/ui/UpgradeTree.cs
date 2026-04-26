@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using Testcase.script.player;
 
 public partial class UpgradeTree : Control
 {
@@ -9,6 +10,10 @@ public partial class UpgradeTree : Control
 			Hide();
 	}
 
-	public void AddToTree(PackedScene node) => GetNode<Control>("ButtonList").AddChild(node.Instantiate());
-	
+	public void AddToTree(PackedScene node, Player player)
+	{
+		var a = node.Instantiate<UpgradeBranch>();
+		a.SetPlayer(player);
+		GetNode<Control>("ButtonList").AddChild(a);
+	}
 }

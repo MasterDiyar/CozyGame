@@ -1,11 +1,13 @@
 using Godot;
 using System;
+using Testcase.script.player;
 
 public partial class GameManager : Node
 {
     public static GameManager Instance;
 
-    public Node2D Game, Pausable, Player;
+    public Node2D Game, Pausable;
+    public Player Player;
 
     public CanvasLayer UI;
 

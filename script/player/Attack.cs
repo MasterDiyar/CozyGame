@@ -36,6 +36,8 @@ public partial class Attack : Node2D
 		
 		particles = particle.Instantiate<CpuParticles2D>();
 		particles.OneShot = true;
+		particles.Lifetime = attackTime;
+		particles.SetEmitting(false);
 		AddChild(particles);
 
 	}
@@ -49,12 +51,11 @@ public partial class Attack : Node2D
 
 	public void ExecuteAttack(float angle, Unit executer)
 	{
-		particles.SetEmitting(true);
-		if (_timer < attackTime) return;
-		_timer = 0;
+		if (_timer < attackTime) return; _timer = 0;
 		var totalAngle = angle + StartAngle;
-		for (int i = 0; i < count; i++)
-		{
+		particles.Position = Vector2.FromAngle(totalAngle + AngleOffset) * SpawnOffset;
+		particles.SetEmitting(true);
+		for (int i = 0; i < count; i++) {
 			var arrand = (GD.Randf() - 0.5f) * randomness;
 			var bullet = Bullet.Instantiate<Bullet>();
 			bullet.Rotation = totalAngle  + AngleOffset * i + arrand;

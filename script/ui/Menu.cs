@@ -22,7 +22,7 @@ public partial class Menu : Control
 	{
 		if (Pick.Selected == -1) return;
 		var a = PlayScene.Instantiate<Game>();
-		a.PickedType(Pick.Selected);
+		a.SetTypeBeforeReady(Pick.Selected);
 		GetParent().AddChild(a);
 		QueueFree();
 	}
