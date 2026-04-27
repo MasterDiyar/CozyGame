@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://7hxql83g88dy"]
+
+[ext_resource type="PackedScene" uid="uid://opj228rlw633" path="res://scene/bullets/bullet.tscn" id="1_ieln2"]
+[ext_resource type="Shader" uid="uid://casdv2vhwl6v6" path="res://shader/clock.gdshader" id="2_ytdy1"]
+[ext_resource type="Texture2D" uid="uid://ck88mdcg2f7ym" path="res://asset/units/Motig.png" id="3_mtcpy"]
+[ext_resource type="Script" uid="uid://ck5yqr21sli6b" path="res://script/bullet/ClockWork.cs" id="4_kx1uc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o57fq"]
+shader = ExtResource("2_ytdy1")
+shader_parameter/fill_amount = 0.0
+shader_parameter/clockwise = false
+shader_parameter/rotation_offset = 300.00001425
+
+[node name="MotigSwingBullet" unique_id=474972768 instance=ExtResource("1_ieln2")]
+
+[node name="Texture" parent="." index="1" unique_id=1441168888]
+material = SubResource("ShaderMaterial_o57fq")
+texture = ExtResource("3_mtcpy")
+flip_h = true
+region_rect = Rect2(0.064266205, -0.22260284, 31.720547, 31.88405)
+script = ExtResource("4_kx1uc")
