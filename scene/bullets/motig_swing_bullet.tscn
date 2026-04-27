@@ -17,5 +17,5 @@ shader_parameter/rotation_offset = 300.00001425
 material = SubResource("ShaderMaterial_o57fq")
 texture = ExtResource("3_mtcpy")
 flip_h = true
-region_rect = Rect2(0.064266205, -0.22260284, 31.720547, 31.88405)
+region_rect = Rect2(0, 0, 32, 32)
 script = ExtResource("4_kx1uc")

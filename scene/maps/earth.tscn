@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c2ql0owwtfjn4" path="res://asset/map/se.png" id="2_5hqyx"]
 [ext_resource type="Texture2D" uid="uid://by1dh1gutpu1o" path="res://asset/map/sa.png" id="4_w1yo3"]
 [ext_resource type="Texture2D" uid="uid://da7guphfqrabd" path="res://asset/map/walter.png" id="5_w1yo3"]
+[ext_resource type="PackedScene" uid="uid://bl47noiiyip28" path="res://scene/enviroment/grass_renderer.tscn" id="6_5hqyx"]
 
 [sub_resource type="Gradient" id="Gradient_4nvfd"]
 colors = PackedColorArray(0.7, 0, 0.011666489, 1, 2.0696223e-06, 0.49572027, 0.3735369, 1)
@@ -38,3 +39,6 @@ scale = Vector2(1.1041666, 1)
 texture = ExtResource("5_w1yo3")
 region_enabled = true
 region_rect = Rect2(0, 0, 2048, 2048)
+
+[node name="grassRenderer" parent="." unique_id=1625614558 instance=ExtResource("6_5hqyx")]
+texture_filter = 3

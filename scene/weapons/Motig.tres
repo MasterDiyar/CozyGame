@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="WeaponResource" format=3 uid="uid://bfj555cnvsggq"]
+
+[ext_resource type="PackedScene" uid="uid://7hxql83g88dy" path="res://scene/bullets/motig_swing_bullet.tscn" id="1_2gsxg"]
+[ext_resource type="Texture2D" uid="uid://ck88mdcg2f7ym" path="res://asset/units/Motig.png" id="1_ld3jr"]
+[ext_resource type="Script" uid="uid://63ykb1bpx0u7" path="res://script/weapon/WeaponResource.cs" id="1_xyr35"]
+[ext_resource type="Script" uid="uid://cxxhqxh8q1t64" path="res://script/bullet/BulletResource.cs" id="2_1dw5n"]
+[ext_resource type="PackedScene" uid="uid://dkes8s3lfag58" path="res://scene/particles/sparks.tscn" id="4_1dw5n"]
+[ext_resource type="Texture2D" uid="uid://cjx4qnw7411dm" path="res://asset/units/Gryazuka.png" id="5_yxtvx"]
+
+[sub_resource type="Resource" id="Resource_yxtvx"]
+script = ExtResource("2_1dw5n")
+Texture = ExtResource("1_ld3jr")
+TextureRect = Rect2(0, 0, 32, 32)
+LifeTime = 0.5
+Damage = 16.0
+metadata/_custom_type_script = "uid://cxxhqxh8q1t64"
+
+[resource]
+script = ExtResource("1_xyr35")
+BulletScene = ExtResource("1_2gsxg")
+AttackTime = 1.5
+BulletResource = SubResource("Resource_yxtvx")
+ParticleScene = ExtResource("4_1dw5n")
+WeaponIcon = ExtResource("5_yxtvx")
+IconRect = Rect2(48, 0, 16, 32)
+metadata/_custom_type_script = "uid://63ykb1bpx0u7"

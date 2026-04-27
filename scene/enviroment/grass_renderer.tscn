@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bl47noiiyip28"]
+
+[ext_resource type="Script" uid="uid://br2266udjkdkp" path="res://script/map/GrassRenderer.cs" id="1_eealq"]
+[ext_resource type="Texture2D" uid="uid://dt4blqgap184q" path="res://asset/map/travaMurava.png" id="2_xtehp"]
+
+[node name="grassRenderer" type="Node2D" unique_id=1625614558]
+script = ExtResource("1_eealq")
+GrassTexture = ExtResource("2_xtehp")
