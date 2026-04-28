@@ -516,7 +516,7 @@ _data = {
 &"RESET": SubResource("Animation_w7huc")
 }
 
-[node name="Node2D" type="Node2D" unique_id=693067498]
+[node name="Musketer" type="Node2D" unique_id=693067498]
 texture_filter = 3
 
 [node name="Body" type="Sprite2D" parent="." unique_id=1093549749]

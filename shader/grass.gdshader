@@ -15,7 +15,7 @@ float rand(vec2 co) {
 }
 
 void vertex() {
-    float noise = rand(MODEL_MATRIX[3].xy);
+    float noise = rand(floor(MODEL_MATRIX[3].xy));
     
     float height_factor = 1.0 - UV.y;
     

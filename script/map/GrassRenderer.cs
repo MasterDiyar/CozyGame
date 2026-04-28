@@ -2,10 +2,11 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+
 public partial class GrassRenderer : Node2D
 {
     [Export] public Texture2D GrassTexture;
-    [Export] public int Count = 10000; // Попробуй сразу 10к!
+    [Export] public int Count = 10000; 
     [Export] public Vector2 AreaSize = new Vector2(1000, 1000);
 
     private readonly List<Rid> _instances = new List<Rid>();
@@ -41,9 +42,11 @@ public partial class GrassRenderer : Node2D
         Rid texRid = GrassTexture.GetRid();
         Rid canvasRid = GetCanvas();
 
-        for (int i = 0; i < Count; i++) {
-            Rid ciRid = RenderingServer.CanvasItemCreate();
+        for (int i = 0; i < Count; i++)
+        {
+            Rid ciRid = RenderingServer.MultimeshCreate();
             RenderingServer.CanvasItemSetParent(ciRid, canvasRid);
+            RenderingServer.CanvasItemSetZIndex(ciRid, GetZIndex());
 
             RenderingServer.MaterialSetParam(materialRid, "amplitude", 15.0f);
 
